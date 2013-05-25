@@ -27,7 +27,7 @@
 
 #pgHeader {
   position: relative;
-  background: url("../images/hdr_fill.png") repeat-x;
+  background: url("/media/img/layout/hdr_fill.png") repeat-x;
   height: 80px;
   margin: 0;
   padding: 0;
