@@ -1,49 +1,102 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" dir="ltr">
- <head>
-  <title>{%block title%}{%endblock%} - PostgreSQL Community Association of Canada</title>
-  <meta http-equiv="Content-Type" content="text/xhtml; charset=utf-8" />
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <style type="text/css" media="screen" title="Normal Text">@import url("/static/css/base.css");</style>
-  <style type="text/css" media="screen" title="Normal Text">@import url("/static/css/geckofixes.css");</style>
-{#
-  <link rel="alternate" type="application/rss+xml" title="PostgreSQL Europe News" href="/feeds/news/" />
-  <link rel="alternate" type="application/rss+xml" title="PostgreSQL Europe Events" href="/feeds/events/" />
-#}
-{%block extrahead%}{%endblock%}
- </head>
- <body>
-  <div id="pgContainerWrap">
-   <div id="pgContainer">
-    <div id="pgHeaderContainer">
-	 <div id="pgHeader">
-	  <div id="pgHeaderLogoLeft">
-	   <a href="/"><img alt="PostgreSQL Community Association of Canada" height="80" width="230" src="/static/img/layout/hdr_left.png" /></a>
-	  </div>
-	  <div id="pgHeaderLogoRight">
-	   <a href="/"><img width="210" height="80" alt="PostgreSQL Community Association of Canada" src="/static/img/layout/hdr_right.png" /></a>
-	  </div>
-	 </div> <!-- pgHeader -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	 <div id="pgTopNav">
-	  <div id="pgTopNavLeft"><img width="7" height="23" alt="" src="/static/img/layout/nav_lft.png" /></div>
-	  <div id="pgTopNavRight"><img width="7" height="23" alt="" src="/static/img/layout/nav_rgt.png" /></div>
-	  <ul id="pgTopNavList">
-	   <li><a href="/" title="Home">Home</a></li>
-	  </ul>
-	 </div> <!-- pgTopNav -->
-	</div> <!-- pgHeaderContainer -->
-	<div id="pgContent">
-{%block layoutblock%}{%endblock%}
-     <br class="pgClearBoth" />
-    </div> <!-- pgContent -->
-	<div id="pgFooter">
-         <a class="navFooter" href="/about/privacypolicy">Privacy Policy</a> |
-         <a class="navFooter" href="/about/website">About the website</a><br/>
-	 Copyright &copy; 2012-2015 PostgreSQL Community Association of Canada
-	</div> <!-- pgFooter -->
-   </div>
-  </div> <!-- pgContainerWrap -->
- </body>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/static/css/pgcac.css">
+
+    <title>{%block title%}{%endblock%} - PostgreSQL Community Association of Canada</title>
+{%block extrahead%}{%endblock%}
+  </head>
+  <body>
+    <div class="container-fluid">
+
+      <!-- Nav -->
+      <div class="row justify-content-md-center">
+         <div class="col">
+           <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+             <a class="navbar-brand p-0" href="/">
+               <img class="logo" src="/static/img/elephant.png" alt="PostgreSQL Elephant Logo">
+             </a>
+             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#pgNavbar" aria-controls="pgNavbar" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+             </button>
+             <div class="collapse navbar-collapse" id="pgNavbar">
+               <ul class="navbar-nav mr-auto">
+                 <li class="nav-item p-2"><a href="/" title="Home">Home</a></li>
+               </ul>
+             </div> <!-- pgNavBar -->
+	       </nav>
+         </div> <!-- col -->
+      </div> <!-- row -->
+      <!-- End Nav -->
+
+      <!-- Content -->
+<div class="container-fluid margin">
+  <div class="row">
+
+    <!-- Side Nav -->
+    <div class="col-lg-2">
+      <div id="pgSideWrap">
+       <div id="pgSideNav">
+         <h2>Quick Links</h2>
+         <ul>
+           <li><a href="/"/>Home</li>
+           <li><a href="/about/privacypolicy/">Privacy Policy</a></li>
+           <li><a href="/about/website/">Website</a></li>
+         </ul>
+       </div>
+      </div>
+    </div>
+    <!-- End Side Nav -->
+
+    <!-- Main Content -->
+    <div class="col-lg-10">
+      <div id="pgContentWrap">
+
+
+  <div class="row">
+    <div class="col-md-9">
+      {% block maincontent %}{% endblock %}
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Related Info -->
+    <div class="col-md-3">
+      {% block relatedinfo %}{% endblock %}
+    </div>
+    <!-- End Related Info -->
+
+  </div>
+        <!-- End Content -->
+
+
+      </div> <!-- pgContentWrap -->
+    </div>
+  </div>
+</div>
+
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="container">
+	    <a href="/about/privacypolicy/">Privacy policy</a> | <a href="/about/website/">About the website</a>
+	    <br/>
+	    Copyright © 2008-2020 PostgreSQL Community Association of Canada
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+
+{%block jquery%}
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+{%endblock%}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+{%block pagescript%}
+{%endblock%}
+  </body>
 </html>

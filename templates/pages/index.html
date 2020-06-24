@@ -1,17 +1,17 @@
-{%extends "base.html" %}
-{%block title%}Welcome{%endblock%}
-{%block layoutblock%}
+{% extends "base.html" %}
+{% block title %}Welcome{% endblock %}
 
+{% block relatedinfo %}
 <div id="pgFrontRight">
  <div class="pgFrontBox">
-  <h1>Help us out!</h1>
+  <h2>Help us out!</h2>
   <p>In the future you will be able to help PostgreSQL Canada by donating, but in the meantime
   why not help out in the <a href="https://www.postgresql.org/community/">PostgreSQL community</a>.
   </p>
  </div>
 
  <div class="pgFrontBox">
-  <h1>Other usergroups</h1>
+  <h2>Other usergroups</h2>
   <ul>
    <li><a href="https://www.postgresql.eu/">PostgreSQL Europe</a></li>
    <li><a href="https://www.postgresql.us/">PostgreSQL US</a></li>
@@ -19,13 +19,15 @@
  </div>
 
  <div class="pgFrontBox">
-  <h1>Related organisations</h1>
+  <h2>Related organisations</h2>
   <ul>
    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
   </ul>
  </div>
 </div>
+{% endblock %}
 
+{% block maincontent %}
 <div id="pgFrontLeft">
  <div id="pgFrontWelcome" class="pgFrontBox">
   <h1>Welcome to PostgreSQL Canada</h1>
@@ -60,5 +62,5 @@ future to see how we're getting on.
   </div>
  </div> <!-- pgFrontWelcome -->
 </div> <!-- pgFrontLeft -->
-{%endblock%}
+{% endblock %}
 
