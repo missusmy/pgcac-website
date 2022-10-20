@@ -8,9 +8,10 @@
   --body-bg-color: #fff;
   --body-fg-color: #515151;
   --h-fg-color: #515151;
-  --navbar-bg-color: inherit;
+  --navbar-bg-color: #fff;
   --navbar-fg-color: inherit;
   --navbar-sdw-color: rgba(0,0,0,0.2);
+  --navbar-toggler-img: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
 /** DARK COLOR (overrides only) **/
@@ -21,6 +22,7 @@
     --h-fg-color: #2b6da3;
     --navbar-bg-color: #212121;
     --navbar-fg-color: #f3f5f9;
+    --navbar-toggler-img: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(243, 245, 249, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
   }
 }
 
@@ -60,6 +62,10 @@ a {
   height: 2rem;
   margin-left: 0;
   margin-bottom: 0;
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: var(--navbar-toggler-img)
 }
 
 #footer {
