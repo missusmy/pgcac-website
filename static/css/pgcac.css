@@ -5,6 +5,7 @@
 /** STANDARD COLOR DEFINITIONS (complete list) **/
 :root {
   --a-fg-color: #336791;
+  --a-highlight-fg-color: #193145;
   --body-bg-color: #fff;
   --body-fg-color: #515151;
   --h-fg-color: #515151;
@@ -17,6 +18,7 @@
 /** DARK COLOR (overrides only) **/
 @media (prefers-color-scheme: dark) {
   :root {
+    --a-highlight-fg-color: #50b0f0;
     --body-bg-color: #212121;
     --body-fg-color: #f3f5f9;
     --h-fg-color: #2b6da3;
@@ -53,6 +55,7 @@ a {
 }
 
 a:hover, a:active {
+  color: var(--a-highlight-fg-color);
   text-decoration: none;
 }
 
