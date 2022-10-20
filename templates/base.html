@@ -29,73 +29,70 @@
                <ul class="navbar-nav mr-auto">
                  <li class="nav-item p-2"><a href="/" title="Home">Home</a></li>
                </ul>
-             </div> <!-- pgNavBar -->
+             </div>
 	       </nav>
          </div> <!-- col -->
       </div> <!-- row -->
       <!-- End Nav -->
 
       <!-- Content -->
-<div class="container-fluid margin">
-  <div class="row">
+      <div class="container-fluid margin">
+        <div class="row">
 
-    <!-- Side Nav -->
-    <div class="col-lg-2">
-      <div id="pgSideWrap">
-       <div id="pgSideNav">
-         <h2>Quick Links</h2>
-         <ul>
-           <li><a href="/"/>Home</li>
-           <li><a href="/about/pgcac">About</a></li>
-           <li><a href="/donate">Donate</a></li>
-           <li><a href="/trademarks/list">Trademarks</a></li>
-           <li><a href="/domains/list">Domain Names</li>
-           <li><a href="/about/privacypolicy/">Privacy Policy</a></li>
-           <li><a href="/about/website/">Website</a></li>
-           <li><a href="/about/contact/">Contact</a></li>
-         </ul>
-       </div>
+          <!-- Side Nav -->
+          <div class="col-lg-2">
+            <div>
+             <div>
+               <h2>Quick Links</h2>
+               <ul>
+                 <li><a href="/"/>Home</li>
+                 <li><a href="/about/pgcac">About</a></li>
+                 <li><a href="/donate">Donate</a></li>
+                 <li><a href="/trademarks/list">Trademarks</a></li>
+                 <li><a href="/domains/list">Domain Names</li>
+                 <li><a href="/about/privacypolicy/">Privacy Policy</a></li>
+                 <li><a href="/about/website/">Website</a></li>
+                 <li><a href="/about/contact/">Contact</a></li>
+               </ul>
+             </div>
+            </div>
+          </div>
+          <!-- End Side Nav -->
+
+          <!-- Content -->
+          <div class="col-lg-10">
+            <div>
+
+              <div class="row">
+                <!-- Main Content -->
+                <div class="col-md-9">
+                  {% block maincontent %}{% endblock %}
+                </div>
+                <!-- End Main Content -->
+
+                <!-- Related Info -->
+                <div class="col-md-3">
+                  {% block relatedinfo %}{% endblock %}
+                </div>
+                <!-- End Related Info -->
+
+              </div>
+            </div>
+          </div>
+          <!-- End Content -->
+        </div>
       </div>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <div class="container">
+          <a href="/about/privacypolicy/">Privacy policy</a> | <a href="/about/website/">About the website</a>
+          <br/>
+          Copyright © 2008-2021 PostgreSQL Community Association of Canada
+        </div>
+      </footer>
+      <!-- End Footer -->
     </div>
-    <!-- End Side Nav -->
-
-    <!-- Main Content -->
-    <div class="col-lg-10">
-      <div id="pgContentWrap">
-
-
-  <div class="row">
-    <div class="col-md-9">
-      {% block maincontent %}{% endblock %}
-    </div>
-    <!-- End Main Content -->
-
-    <!-- Related Info -->
-    <div class="col-md-3">
-      {% block relatedinfo %}{% endblock %}
-    </div>
-    <!-- End Related Info -->
-
-  </div>
-        <!-- End Content -->
-
-
-      </div> <!-- pgContentWrap -->
-    </div>
-  </div>
-</div>
-
-
-    <!-- Footer -->
-    <footer id="footer">
-      <div class="container">
-	    <a href="/about/privacypolicy/">Privacy policy</a> | <a href="/about/website/">About the website</a>
-	    <br/>
-	    Copyright © 2008-2021 PostgreSQL Community Association of Canada
-      </div>
-    </footer>
-    <!-- End Footer -->
-
 
 {%block jquery%}
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
