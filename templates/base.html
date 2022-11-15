@@ -5,13 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#336791">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- CSS -->
+    <link href="https://assets.postgresql.org/bootstrap/4/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://assets.postgresql.org/font-awesome/fontawesome-free-6/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
 
     <link rel="stylesheet" href="/static/css/pgcac.css">
 
     <title>{%block title%}{%endblock%} - PostgreSQL Community Association of Canada</title>
 {%block extrahead%}{%endblock%}
+
+    <script>
+      let theme = 'light';
+      if (localStorage.getItem('theme')) {
+        if (localStorage.getItem('theme') === 'dark') {
+          theme = 'dark';
+        }
+      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        theme = 'dark';
+      }
+     </script>
   </head>
   <body>
     <div class="container-fluid">
@@ -33,6 +45,9 @@
                  <li class="nav-item p-2"><a href="/donate" title="About">Donate</a></li>
                  <li class="nav-item p-2"><a href="/about/contact" title="Contact">Contact</a></li>
                </ul>
+               <form id="form-theme" class="form-inline" style="display: none;">
+                 <button id="btn-theme" class="btn btn-default ml-1" type="button" onclick="theme_switch()" title="Toggle light/dark mode"></button>
+               </form>
              </div>
 	       </nav>
          </div> <!-- col -->
@@ -98,10 +113,48 @@
       <!-- End Footer -->
     </div>
 
-{%block jquery%}
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-{%endblock%}
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- jQuery/Bootstrap -->
+    <script src="https://assets.postgresql.org/jquery/3/jquery-3.6.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://assets.postgresql.org/bootstrap/4/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+    <script>
+       function theme_apply() {
+         'use strict';
+         if (theme === 'light') {
+           document.getElementById('btn-theme').innerHTML = '<i class="fas fa-moon"></i>';
+           document.documentElement.setAttribute('data-theme', 'light');
+           localStorage.setItem('theme', 'light');
+         } else {
+           document.getElementById('btn-theme').innerHTML = '<i class="fas fa-lightbulb"></i>';
+           document.documentElement.setAttribute('data-theme', 'dark');
+           localStorage.setItem('theme', 'dark');
+         }
+       }
+
+       theme_apply();
+       document.getElementById("form-theme").style.display="block";
+
+       function theme_switch() {
+         'use strict';
+         if (theme === 'light') {
+           theme = 'dark';
+         } else {
+           theme = 'light';
+         }
+         theme_apply();
+       }
+
+       let theme_OS = window.matchMedia('(prefers-color-scheme: light)');
+       theme_OS.addEventListener('change', function (e) {
+         'use strict';
+         if (e.matches) {
+           theme = 'light';
+         } else {
+           theme = 'dark';
+         }
+         theme_apply();
+       });
+     </script>
 {%block pagescript%}
 {%endblock%}
   </body>
