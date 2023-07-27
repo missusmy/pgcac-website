@@ -1,54 +1,57 @@
-{%extends "base.html" %}
-{%block title%}Donate to PGCAC{%endblock%}
-{%block maincontent%}
+{% extends "base.html" %}
+{% block title %}Donate to PGCAC{% endblock %}
+{% block maincontent %}
 
-<h1>Donate</h1>
-<p>
-  The PostgreSQL Community Association is a not-for-profit
-  organisation that relies on your donations to fulfill its mission of managing
-  and protecting key assets for the PostgreSQL project, such as domain names and
-  trademarks.
-</p>
+  <h1>Donate</h1>
+  <p>
+    The PostgreSQL Community Association is a not-for-profit
+    organisation that relies on your donations to fulfill its mission of managing
+    and protecting key assets for the PostgreSQL project, such as domain names and
+    trademarks.
+  </p>
 
-<h2>Credit/Debit Card</h2>
-<p>Donate using any of a variety of cards and payment methods via Stripe</p>
+  <h2>Credit/Debit Card</h2>
+  <p>
+    If you would like to help support the mission of the PostgreSQL Community Association (PGCA) donations can be made
+    via Stripe using any of a variety of cards and payment methods by clicking the button below:</p>
 
-<script async
-  src="https://js.stripe.com/v3/buy-button.js">
-</script>
+  <script async
+          src="https://js.stripe.com/v3/buy-button.js">
+  </script>
 
-<stripe-buy-button
-  buy-button-id="buy_btn_1NYVWCH2jVzVOptSgHmtWRpe"
-  publishable-key="pk_live_51NYUFhH2jVzVOptSXaLQ9XGrka7IAxP9qjzyQfWSYPm9kaYKciajFO2EvqLQg4YjzKlWxLp9zJww2h3xoImG5a8L00jc1FjSG0"
->
-</stripe-buy-button>
+  <stripe-buy-button
+    buy-button-id="buy_btn_1NYVWCH2jVzVOptSgHmtWRpe"
+    publishable-key="pk_live_51NYUFhH2jVzVOptSXaLQ9XGrka7IAxP9qjzyQfWSYPm9kaYKciajFO2EvqLQg4YjzKlWxLp9zJww2h3xoImG5a8L00jc1FjSG0"
+  >
+  </stripe-buy-button>
 
-<h2>PayPal</h2>
-<p>
-  If you would like to make a quick and easy donation you can
-  do so via PayPal, either using your PayPal account, or with a debit or credit
-  card. Please click the Donate button to visit our PayPal donation page:
+  <h2>PayPal</h2>
+  <p>
+    If you would prefer to donate via PayPal, either using your PayPal account, or with a debit or credit
+    card. Please click the Donate button below to visit our PayPal donation page:
 
   <form action="https://www.paypal.com/donate" method="post" target="_top">
-    <input type="hidden" name="hosted_button_id" value="P96NP3M3LWHZS" />
-    <input type="image" src="https://pics.paypal.com/00/s/OGM0MGY1ZDItMzAyNi00YmMyLThlNTgtMGJlZTkxMTIzZDk0/file.PNG" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-    <img alt="" border="0" src="https://www.paypal.com/en_CA/i/scr/pixel.gif" width="1" height="1" />
+    <input type="hidden" name="hosted_button_id" value="P96NP3M3LWHZS"/>
+    <input type="image" src="https://pics.paypal.com/00/s/OGM0MGY1ZDItMzAyNi00YmMyLThlNTgtMGJlZTkxMTIzZDk0/file.PNG"
+           border="0" name="submit" title="PayPal - The safer, easier way to pay online!"
+           alt="Donate with PayPal button"/>
+    <img alt="" border="0" src="https://www.paypal.com/en_CA/i/scr/pixel.gif" width="1" height="1"/>
   </form>
 
-</p>
+  </p>
 
-<h2>Bank Transfer</h2>
-<p>
-  If you would like to donate via bank transfer, or in any other
-  way, please contact the PGCA board at
-  <a href="mailto:board@lists.postgres.ca">board@lists.postgres.ca</a> and we
-  will be happy to help.
-</p>
+  <h2>Bank Transfer</h2>
+  <p>
+    If you would like to donate via bank transfer, or in any other
+    way, please contact the PGCA board at
+    <a href="mailto:board@lists.postgres.ca">board@lists.postgres.ca</a> and we
+    will be happy to help.
+  </p>
 
-<h2>Thank You</h2>
-<p>
-  Thank you for supporting the PostgreSQL Project!
-</p>
+  <h2>Thank You</h2>
+  <p>
+    Thank you for supporting the PostgreSQL Project!
+  </p>
 
 
-{%endblock%}
+{% endblock %}
