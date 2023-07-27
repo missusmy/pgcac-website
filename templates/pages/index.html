@@ -7,14 +7,20 @@
   <h2>Donate</h2>
   <p>
     If you would like to help support the mission of the PostgreSQL Community
-    Association (PGCA) donations can be made via PayPal, either with a PayPal account
-    or directly using a credit or debit card:
-    <form action="https://www.paypal.com/donate" method="post" target="_top">
-      <input type="hidden" name="hosted_button_id" value="FDSGMYVA93E9L" />
-      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-      <img alt="" border="0" src="https://www.paypal.com/en_CA/i/scr/pixel.gif" width="1" height="1" />
-    </form>
+    Association (PGCA) donations can be made via Stripe using any of a variety of cards and payment methods:</p>
+
+    <script async
+      src="https://js.stripe.com/v3/buy-button.js">
+    </script>
+
+    <stripe-buy-button
+      buy-button-id="buy_btn_1NYVWCH2jVzVOptSgHmtWRpe"
+      publishable-key="pk_live_51NYUFhH2jVzVOptSXaLQ9XGrka7IAxP9qjzyQfWSYPm9kaYKciajFO2EvqLQg4YjzKlWxLp9zJww2h3xoImG5a8L00jc1FjSG0"
+    >
+    </stripe-buy-button>
   </p>
+  <p>If you would prefer to donate using PayPal (through your account, or with a credit or debit card,
+   please see the <a href="/donate">Donate</a> page.</p>
   <p>
     Alternatively, if you wish to make a donation through a bank transfer or by
     other means, please contact the PGCA board at
