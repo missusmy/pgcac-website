@@ -1,4 +1,4 @@
-The PGCAC website is based on the pgeu-website template engine.
+The PGCA website is based on the pgeu-website template engine.
 
 A static website can be generated from these templates with the following steps:
 
