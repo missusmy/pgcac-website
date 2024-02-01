@@ -115,3 +115,13 @@ i.fas {
   border-color: var(--table-td-bdr-color);
   color: var(--table-td-fg-color);
 }
+
+/**
+* This sets the rule for the rendering in the sponsors table. The name is chosen
+* to ensure compatibility with various browser plugins that may otherwise hide
+* images.
+**/
+img.organisation-logo {
+  max-height: 65px;
+  max-width: 150px;
+}
