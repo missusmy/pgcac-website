@@ -27,6 +27,17 @@
   --navbar-bg-color: #212121;
   --navbar-fg-color: #f3f5f9;
   --navbar-toggler-img: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(243, 245, 249, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  --table-td-bdr-color: #4a4a4a;
+  --table-td-fg-color: #f3f5f9;
+  --table-th-bdr-color: #4a4a4a;
+  --table-th-bg-color: #303030;
+  --table-th-fg-color: #f3f5f9;
+  --td-fm-no-bg-color: #ff8882;
+  --td-fm-no-fg-color: #000;
+  --td-fm-obs-fg-color: #000;
+  --td-fm-unk-fg-color: #000;
+  --td-fm-yes-bg-color: #89ff96;
+  --td-fm-yes-fg-color: #000;
 }
 
 body {
