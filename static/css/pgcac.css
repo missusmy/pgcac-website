@@ -96,3 +96,22 @@ i.fas {
   padding: 2em 0 2em 0;
   display: block;
 }
+
+.table th {
+  background-color: var(--table-th-bg-color);
+  border-color: var(--table-th-bdr-color) !important;
+  color: var(--table-th-fg-color);
+}
+
+/* We need to do this otherwise the striping on the feature matrix will break */
+@media (prefers-color-scheme: dark) {
+  .table th {
+    background-color: var(--table-th-bg-color) !important;
+  }
+}
+
+.table td {
+  background-color: var(--table-td-bg-color);
+  border-color: var(--table-td-bdr-color);
+  color: var(--table-td-fg-color);
+}
