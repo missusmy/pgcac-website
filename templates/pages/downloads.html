@@ -12,22 +12,24 @@
 
   <h2>Postgres RPMS for Redhat Enterprise Linux </h2>
   <p>Download the appropriate Repository RPM and save it to the filesystem of 
-    your Redhat Enterprise Linux system. Then run </p>
+    your Redhat Enterprise Linux system. Then run:</p>
     <code>
-        dnf install ./pgdg-redhat-repo-latest.noarch.rpm<br />
-        dnf install postgresql17-server
+        sudo dnf install ./pgdg-redhat-repo-latest.noarch.rpm<br />
+        sudo dnf install postgresql17-server
     </code>    
 
-    <ul>
+    <p>
+      <ul>
         <li><a href="https://download.postgresql.org/pub/repos/yum/reporpms/EL-10-x86_64/pgdg-redhat-repo-latest.noarch.rpm">Redhat Enterprise Linux 10</a></li>
         <li><a href="https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm">Redhat Enterprise Linux 9</a></li>
         <li><a href="https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm">Redhat Enterprise Linux 8</a></li>
-    </ul>
+      </ul>
+    </p>
 
   <h2>Postgres Source download</h2>
 <p>
     You can download the source code for Postgres 17.5 
-    <a href="https://download.postgresql.org/pub/source/v17.5/postgresql-17.5.tar.bz2">here</a>
+    <a href="https://download.postgresql.org/pub/source/v17.5/postgresql-17.5.tar.bz2">here</a>.
 </p>
   
 {% endblock %}
