@@ -10,6 +10,100 @@
     download links for Postgres on Redhat Enterprise Linux.
   </p>
 
+<h2>Features</h2>
+<p> PostgreSQL comes with many features aimed to help developers build applications, administrators to protect data
+    integrity and build fault-tolerant environments, and help you manage your data no matter how big or small the
+    dataset. In addition to being free and open source, PostgreSQL is highly extensible. For example, you can define
+    your own data types, build out custom functions, even write code from different programming languages without
+    recompiling your database!
+    </p>
+<p>
+    PostgreSQL tries to conform with the SQL standard where such conformance does not contradict traditional features
+    or could lead to poor architectural decisions. Many of the features required by the SQL standard are supported,
+    though sometimes with slightly differing syntax or function. Further moves towards conformance can be expected over
+    time. As of the version 16 release in September 2023, PostgreSQL conforms to at least 170 of the 177 mandatory
+    features for SQL:2023 Core conformance. As of this writing, no relational database meets full conformance with this
+    standard.
+    </p>
+<p>
+    Below is an inexhaustive list of various features found in PostgreSQL, with more being added in every major
+    release:
+    </p>
+<ul>
+    <li>
+        <strong>Data Types</strong>
+        <ul>
+            <li>Primitives: Integer, Numeric, String, Boolean</li>
+            <li>Structured: Date/Time, Array, Range / Multirange, UUID</li>
+            <li>Document: JSON/JSONB, XML, Key-value (Hstore)</li>
+            <li>Geometry: Point, Line, Circle, Polygon</li>
+            <li>Customizations: Composite, Custom Types</li>
+            </ul>
+        </li>
+    <li>
+        <strong>Data Integrity</strong>
+        <ul>
+            <li>UNIQUE, NOT NULL</li>
+            <li>Primary Keys</li>
+            <li>Foreign Keys</li>
+            <li>Exclusion Constraints</li>
+            <li>Explicit Locks, Advisory Locks</li>
+            </ul>
+        </li>
+    <li>
+        <strong>Concurrency, Performance</strong>
+        <ul>
+            <li>Indexing: B-tree, Multicolumn, Expressions, Partial</li>
+            <li>Advanced Indexing: GiST, SP-Gist, KNN Gist, GIN, BRIN, Covering indexes, Bloom filters</li>
+            <li>Sophisticated query planner / optimizer, index-only scans, multicolumn statistics</li>
+            <li>Transactions, Nested Transactions (via savepoints)</li>
+            <li>Multi-Version concurrency Control (MVCC)</li>
+            <li>Parallelization of read queries and building B-tree indexes</li>
+            <li>Table partitioning</li>
+            <li>All transaction isolation levels defined in the SQL standard, including Serializable</li>
+            <li>Just-in-time (JIT) compilation of expressions</li>
+            </ul>
+        </li>
+    <li>
+        <strong>Reliability, Disaster Recovery</strong>
+        <ul>
+            <li>Write-ahead Logging (WAL)</li>
+            <li>Replication: Asynchronous, Synchronous, Logical</li>
+            <li>Point-in-time-recovery (PITR), active standbys</li>
+            <li>Tablespaces</li>
+            </ul>
+        </li>
+    <li>
+        <strong>Security</strong>
+        <ul>
+            <li>Authentication: GSSAPI, SSPI, LDAP, SCRAM-SHA-256, Certificate, and more</li>
+            <li>Robust access-control system</li>
+            <li>Column and row-level security</li>
+            <li>Multi-factor authentication with certificates and an additional method</li>
+            </ul>
+        </li>
+    <li>
+        <strong>Extensibility</strong>
+        <ul>
+            <li>Stored functions and procedures</li>
+            <li>Procedural Languages: PL/pgSQL, Perl, Python, and Tcl. There are other languages available through
+                extensions, e.g. Java, JavaScript (V8), R, Lua, and Rust</li>
+            <li>SQL/JSON constructors, query functions, path expressions, and JSON_TABLE</li>
+            <li>Foreign data wrappers: connect to other databases or streams with a standard SQL interface</li>
+            <li>Customizable storage interface for tables</li>
+            <li>Many extensions that provide additional functionality, including PostGIS</li>
+            </ul>
+        </li>
+    <li>
+        <strong>Internationalisation, Text Search</strong>
+        <ul>
+            <li>Support for international character sets, e.g. through ICU collations</li>
+            <li>Case-insensitive and accent-insensitive collations</li>
+            <li>Full-text search</li>
+            </ul>
+        </li>
+    </ul>
+    
   <h2>Postgres RPMS for Redhat Enterprise Linux </h2>
   <p>Download the appropriate Repository RPM and save it to the filesystem of 
     your Redhat Enterprise Linux system. Then run:</p>
