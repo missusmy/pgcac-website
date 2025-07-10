@@ -21,11 +21,17 @@
     If you would like to help support the mission of the PostgreSQL Community Association (PGCA) donations can be made
     via Stripe using any of a variety of cards and payment methods by clicking the button below:</p>
 
-    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-    <stripe-pricing-table pricing-table-id="prctbl_1RjIFTH2jVzVOptSDqg7hpEb"
-    publishable-key="pk_live_51NYUFhH2jVzVOptSXaLQ9XGrka7IAxP9qjzyQfWSYPm9kaYKciajFO2EvqLQg4YjzKlWxLp9zJww2h3xoImG5a8L00jc1FjSG0">
-    </stripe-pricing-table>
+    <script async
+    src="https://js.stripe.com/v3/buy-button.js">
+    </script>
 
+    <stripe-buy-button
+    buy-button-id="buy_btn_1NYVWCH2jVzVOptSgHmtWRpe"
+    publishable-key="pk_live_51NYUFhH2jVzVOptSXaLQ9XGrka7IAxP9qjzyQfWSYPm9kaYKciajFO2EvqLQg4YjzKlWxLp9zJww2h3xoImG5a8L00jc1FjSG0"
+    >
+    </stripe-buy-button>
+
+    <p>Even better, you can also setup a recurring donation:</p>
 
     <stripe-pricing-table pricing-table-id="prctbl_1RjI0sH2jVzVOptSbsbzfGUh"
     publishable-key="pk_live_51NYUFhH2jVzVOptSXaLQ9XGrka7IAxP9qjzyQfWSYPm9kaYKciajFO2EvqLQg4YjzKlWxLp9zJww2h3xoImG5a8L00jc1FjSG0">
