@@ -16,6 +16,7 @@ A static website can be generated from these templates with the following steps:
 
     ```shell script
     python pgeu-website/tools/deploystatic/deploystatic.py `pwd`/pgcac-website `pwd`/postgres.ca
+    python tools/deploystatic.py `pwd`/pgcac-website `pwd`/postgres.ca
     ```
 
 5. Test the resulting build:

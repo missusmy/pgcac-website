@@ -1,2 +1,7 @@
+.gitignore
 .idea
 pythonenv
+.python-version
+tools
+README.md
+postgres.ca
