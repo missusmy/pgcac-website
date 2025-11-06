@@ -1,8 +1,11 @@
 .gitignore
 .idea
 pythonenv
-# .python-version
-# tools
-tools/server_dynamic.py
+.python-version
+tools
 README.md
 postgres.ca
+Procfile
+scripts
+requirements.txt
+runtime.txt
