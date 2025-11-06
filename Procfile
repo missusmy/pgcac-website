@@ -1,0 +1,1 @@
+web: sh scripts/build_static.sh && cd pgcac-website/postgres.ca && python -m http.server 8000
