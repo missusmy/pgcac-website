@@ -1,7 +1,8 @@
 .gitignore
 .idea
 pythonenv
-.python-version
-tools
+# .python-version
+# tools
+tools/server_dynamic.py
 README.md
 postgres.ca
