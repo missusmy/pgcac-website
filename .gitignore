@@ -1,5 +1,6 @@
 .gitignore
 .idea
+.DS_Store
 pythonenv
 .python-version
 tools
@@ -9,3 +10,6 @@ Procfile
 scripts
 requirements.txt
 runtime.txt
+site-refresh.bundle
+site-refresh.patch
+site-refresh_files.zip
