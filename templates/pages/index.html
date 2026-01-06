@@ -1,72 +1,23 @@
 {% extends "base-fullwidth.html" %}
-{% block title %}Welcome{% endblock %}
+{% block title %}PostgreSQL Community Association (PGCA) non-profit{% endblock %}
 
-{% block relatedinfo %}
-<div>
-  <div>
-    <h3>Donate</h3>
-    <p>
-      If you would like to help support the mission of the PostgreSQL Community Association (PGCA) donations can be made
-      via Stripe using any of a variety of cards and payment methods by clicking the button below:</p>
-
-    <script async src="https://js.stripe.com/v3/buy-button.js">
-    </script>
-
-    <stripe-buy-button buy-button-id="buy_btn_1NYVWCh3jVzVOptSgHmtWRpe"
-      publishable-key="pk_live_51NYUFhh3jVzVOptSXaLQ9XGrka7IAxP9qjzyQfWSYPm9kaYKciajFO2EvqLQg4YjzKlWxLp9zJww2h3xoImG5a8L00jc1FjSG0">
-    </stripe-buy-button>
-    </p>
-
-    <p>
-      If you would prefer to donate via PayPal, either using your PayPal account, or with a debit or credit
-      card. Please click the Donate button below to visit our PayPal donation page:
-
-    <form action="https://www.paypal.com/donate" method="post" target="_top">
-      <input type="hidden" name="hosted_button_id" value="P96NP3M3LWHZS" />
-      <input type="image" src="https://pics.paypal.com/00/s/OGM0MGY1ZDItMzAyNi00YmMyLThlNTgtMGJlZTkxMTIzZDk0/file.PNG"
-        border="0" name="submit" title="PayPal - The safer, easier way to pay online!"
-        alt="Donate with PayPal button" />
-      <img alt="" border="0" src="https://www.paypal.com/en_CA/i/scr/pixel.gif" width="1" height="1" />
-    </form>
-
-    </p>
-    <p>
-      Alternatively, if you wish to make a donation through a bank transfer or by
-      other means, please contact the PGCA board at
-      <a href="mailto:board@lists.postgres.ca">board@lists.postgres.ca</a>.
-    </p>
-  </div>
-
-  <div>
-    <h3>Other Organisations</h3>
-    <ul>
-      <li><a href="https://www.postgresql.eu/">PostgreSQL Europe</a></li>
-      <li><a href="https://www.postgresql.us/">PostgreSQL US</a></li>
-    </ul>
-  </div>
-
-  <div>
-    <h3>Related</h3>
-    <ul>
-      <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-    </ul>
-  </div>
-</div>
+{% block notification %}
+  {% include "partials/_default_notification.html" %}
 {% endblock %}
 
 {% block maincontent %}
-<div class="jumbotron jumbotron-fluid banner-gradient mb-0">
+<div class="jumbotron jumbotron-fluid banner-gradient banner-bg mb-0 py-5">
   <div class="container">
     <div class="row">
       <div class="col-lg-6">
         <h1 class="mt-0 mb-4">Protecting the PostgreSQL project&rsquo;s trademarks &amp; brand&nbsp;assets
         </h1>
-        <p>The PostgreSQL Community Association (PGCA*) is an official non-profit organization chartered by the
+        <p class="text-emphasis">The PostgreSQL Community Association (PGCA*) is an official non-profit organization chartered by the
           PostgreSQL Core Team to protect the Postgres brand assets.
         </p>
-        <p><small>*Also known as PostgreSQL Community Association of Canada</small></p>
-        <p><a href="/about/pgca" class="btn btn-primary font-weight-semibold px-4">About PGCA</a><a href="/donate"
-            class="btn btn-secondary font-weight-semibold ml-2 px-4">Donate to PGCA <i
+        <p class="text-emphasis"><small>*Also known as PostgreSQL Community Association of Canada</small></p>
+        <p><a href="/donate"
+            class="btn btn-secondary font-weight-semibold px-4">Donate to PGCA <i
               class="fas fa-arrow-right"></i></a></p>
       </div>
       <div class="col-lg-6 text-center">
@@ -83,14 +34,14 @@
       <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2 text-center mb-5">
         <h2 class="text-primary mb-4">What is the PGCA non-profit?</h2>
         <p>PGCA (PostgreSQL Community Association) is a non-profit organization chartered in Canada by the PostgreSQL Core Team in 2011 to hold and protect the Postgres trademarks and domains.</p>
-        <p>While Postgres is an open source project, its trademarks still need to be protected from people who mis-use the Postgres name (and the Slonik elephant logo) in ways that are not fair use and confuse users. The PGCA also works to defend our trademarks when people who are not representing the PostgreSQL Core Team file trademark applications in an attempt to claim rights.</p>
+        <p>While Postgres is an open source project, its trademarks still need to be protected from misuse of the Postgres name (PostgreSQL, Postgres) and logo (Slonik the elephant) in ways that are not fair use and confuse users. The PGCA also works to defend our trademarks when people who are not representing the PostgreSQL Project attempt to claim rights by filing trademark applications.</p>
       </div>
       <div class="col-md-10 offset-md-1 col-lg-4 offset-lg-0 mb-5">
         <div class="card h-100 text-center text-white">
           <div class="card-body">
             <i class="fas fa-6x fa-file-contract text-white"></i>
-            <h3 class="h2 text-white card-title">Trademarks & Domains Need Protecting</h3>
-            <p class="card-text text-white">The brand assets that PGCA currently protects are trademarks and domains that are required by the Open Source Postgres project.</p>
+            <h3 class="h2 text-white card-title">Trademarks <br class="d-none d-lg-block d-xl-none">& Domains Need <br class="d-none d-lg-block d-xl-none">Protecting</h3>
+            <p class="card-text text-white">The brand assets that PGCA currently protects are trademarks and domains that are required by the Open Source Postgres&nbsp;project.</p>
           </div>
         </div>
       </div>
@@ -108,12 +59,12 @@
           <div class="card-body">
             <i class="fas fa-6x fa-hand-holding-heart text-white"></i>
             <h3 class="h2 text-white card-title">You May Not Have Heard About PGCA (yet)</h3>
-            <p class="card-text text-white">To date, most of the PGCA non-profit work to protect the PostgreSQL brand has been invisible. As Postgres grows, the work to protect the brand assets is also growing.</p>
+            <p class="card-text text-white">To date, most of PGCA&rsquo;s work to protect the PostgreSQL brand has been invisible. As Postgres grows, the work to protect the brand assets is also growing.</p>
           </div>
         </div>
       </div>
-      <div class="col-md-12 mt-3 text-center">
-        <p><small>The PostgreSQL Trademark policy can be found at: <a href="https://postgresql.org/about/policies/trademarks/">postgresql.org/about/policies/trademarks/</a></small></p>
+      <div class="col-md-12 text-center">
+        <p><small>The PostgreSQL Trademark policy can be found at: <a href="https://www.postgresql.org/about/policies/trademarks/" target="_blank" rel="noopener">postgresql.org/about/policies/trademarks/</a></small></p>
       </div>
     </div>
   </div>
@@ -123,7 +74,7 @@
   <div class="container margin">
     <div class="row">
       <div class="col-md-12">
-        <h2 class="text-primary mb-5">Why the PGCA non-profit matters?</h2>
+        <h2 class="text-primary mb-5">Why does the PGCA non-profit matter?</h2>
       </div>
     </div>
     <div class="row tight-gutters">
@@ -180,7 +131,7 @@
   <div class="container margin">
     <div class="row">
       <div class="col-md-6">
-        <h2 class="text-white mb-3">How PGCA is different from other Postgres non-profit orgs?</h2>
+        <h2 class="text-white mb-3">How is PGCA different from other Postgres non-profits?</h2>
         <ul>
           <li class="mb-2"><strong>Chartered</strong> by the PostgreSQL Core Team</li>
           <li class="mb-2"><strong>Global</strong> responsibility (vs. regional)</li>
@@ -194,100 +145,83 @@
   </div>
 </div>
 
+<div id="trademarks" class="py-5 dark-theme">
+  <div class="container margin">
+    <div class="row">
+      <div class="col-md-12 text-center mb-4 text-white">
+        <h2 class="mb-4 text-white">How can I use one of the PostgreSQL trademarks?</h2>
+        <p class="mx-auto narrow-text">Many uses of our trademarks fall under “fair use” and do not require any permission. The <a href="https://www.postgresql.org/about/policies/trademarks/" target="_blank" rel="noopener">PostgreSQL Trademark Policy</a> describes these uses and general requirements. We worked very hard with our legal counsel to make the trademark policy as flexible and permissive as possible—while still protecting the PostgreSQL brand from misuse and confusion.</p>
+        <p class="mx-auto narrow-text">For uses that fall outside of our trademark policy, or if you have any questions if your usage is "fair use", we recommend you <a href="mailto:board@postgres.ca">email the PGCA Board</a> to apply for a general use or tradename license.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div id="latest-news" class="py-5">
   <div class="text-center position-relative mt-4 mb-5">
     <hr class="separator-line position-absolute" />
-    <h2 class="mt-n4 mb-0 position-relative text-primary">Latest news</h2>
+    <h2 class="mt-n4 mb-0 position-relative text-primary"><span class="bd-content-title">Latest news <a class="anchorjs-link" aria-label="Anchor" href="#latest-news"></a></span></h2>
   </div>
-  <div class="news-cards list-unstyled">
-    <div class="card">
-      <div class="container margin">
-        <h3 id="2025-07-02"><a class="text-emphasis" href="#2025-07-02"> PGCA Sponsorship prospectus updated</a></h3>
-        <h5 class="mt-0 mb-4">2 July 2025</h5>
-        <p>As of July 2025, the sponsorship prospectus for the PostgreSQL
-          Community Association (PGCA) has been updated. The volunteer-run
-          PGCA non-profit relies entirely on sponsorship and donations from
-          corporations and individuals like you.
-        </p>
-        <p>The PGCA Board and the PostgreSQL Core Team deeply appreciate the
-          generous financial support we receive from corporations, small
-          businesses, and individual donors. Your annual contributions make
-          it possible for us to protect the PostgreSQL brand assets.
-        </p>
-        <p>To learn more about sponsorship levels, where your sponsorship
-          dollars will go, and how PGCA recognizes donors—please review the
-          <a href="/static/pdf/pgca-funding-2025.pdf">updated PGCA
-            sponsorship prospectus.</a>
-        </p>
+  <div class="container">
+    <div class="news-cards no-content">
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <a class="link-anchor" id="2025-07-02" name="2025-07-02"></a>
+              <h5 class="mt-0 mb-2">2 July 2025</h5>
+              <h3 class="mt-0 mb-4 text-emphasis">PGCA Sponsorship prospectus updated</h3>
+              <p class="mt-auto"><a href="/news#2025-07-02">Read item</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <a class="link-anchor" id="2025-05-14" name="2025-05-14"></a>
+              <h5 class="mt-0 mb-2">14 May 2025</h5>
+              <h3 class="mt-0 mb-4 text-emphasis">Board members confirmed</h3>
+              <p class="mt-auto"><a href="/news#2025-05-14">Read item</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <a class="link-anchor" id="2023-12-06" name="2023-12-06"></a>
+              <h5 class="mt-0 mb-2">6 December 2023</h5>
+              <h3 class="mt-0 mb-4 text-emphasis">Updates on trademark actions against the PostgreSQL community</h3>
+              <p class="mt-auto"><a href="/news#2023-12-06">Read item</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <a class="link-anchor" id="2023-07-27" name="2023-07-27"></a>
+              <h5 class="mt-0 mb-2">27 July 2023</h5>
+              <h3 class="mt-0 mb-4 text-emphasis">Setting the record straight: More updates on a trademark dispute</h3>
+              <p class="mt-auto"><a href="/news#2023-07-27">Read item</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <a class="link-anchor" id="2023-07-03" name="2023-07-03"></a>
+              <h5 class="mt-0 mb-2">3 July 2023</h5>
+              <h3 class="mt-0 mb-4 text-emphasis">Change of Name</h3>
+              <p class="mt-auto"><a href="/news#2023-07-03">Read item</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p><a href="/news" class="btn btn-brand font-weight-semibold px-4">Visit the news page</a></p>
+        </div>
       </div>
     </div>
-    <div class="card">
-      <div class="container margin">
-        <h3 id="2025-05-14"><a class="text-emphasis" href="#2025-05-14">Board members confirmed</a></h3>
-        <h5 class="mt-0 mb-4">14 May 2025</h5>
-        <p>Following an AGM and board meeting held at PGConf.dev 2025 in Montreal, the
-          PostgreSQL Community Association of Canada's board has been confirmed
-          as:</p>
-        <ul>
-          <li>Dave Page (Chairman)</li>
-          <li>Steve Singer (Treasurer)</li>
-          <li>Jonathan Katz (Secretary)</li>
-          <li>Jaime Casanova</li>
-          <li>Peter Eisentraut</li>
-          <li>Marc Fournier</li>
-          <li>Claire Giordano</li>
-        </ul>
-      </div>
-    </div>
-    <div class="card">
-      <div class="container margin">
-        <h3 id="2023-12-06"><a class="text-emphasis" href="#2023-12-06">Updates on trademark actions against the PostgreSQL community</a></h3>
-        <h5 class="mt-0 mb-4">6 December 2023</h5>
-        <p>
-          The PostgreSQL Community Association wishes to provide an update on
-          trademark actions that were taken by Fundación PostgreSQL.
-        </p>
-        <p>
-          On November 17, 2023, the PostgreSQL Community Association, PostgreSQL
-          Europe, and Fundación PostgreSQL reached a settlement on all outstanding
-          trademark issues. Fundación PostgreSQL has surrendered all trademarks
-          and entered into a trademark license with the PostgreSQL Community
-          Association.
-        </p>
-        <p>
-          All three organizations are pleased to have reached an amicable
-          resolution, and all will continue to work on activities to help grow the
-          PostgreSQL community.
-        </p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="container margin">
-        <h3 id="2023-07-27"><a class="text-emphasis" href="#2023-07-27">Setting the record straight: More updates on a trademark dispute</a></h3>
-        <h5 class="mt-0 mb-4">27 July 2023</h5>
-        <p>On 27th July we published a
-          <a
-            href="https://www.postgresql.org/about/news/setting-the-record-straight-more-updates-on-a-trademark-dispute-2682/">news
-            article</a>
-          updating the community on the ongoing trademark dispute with Fundación PostgreSQL
-          in response to a blog post on their website.
-        </p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="container margin">
-        <h3 id="2023-07-03"><a class="text-emphasis" href="#2023-07-03">Change of Name</a></h3>
-        <h5 class="mt-0 mb-4">3 July 2023</h5>
-        <p>Following discussion with the PostgreSQL Core Team, the Association has
-          now registered <b>PostgreSQL Community Association</b> (PGCA) as a business
-          name and will primarily use that name in the future.
-        </p>
-        <p>The <b>PostgreSQL Community Association of Canada</b> remains the legal name
-          of the Association, and may still be seen in official documents, contracts,
-          and elsewhere.
-        </p>
-      </div>
-    </li>
   </div>
 </div>
 {% endblock %}

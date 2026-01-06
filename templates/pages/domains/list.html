@@ -1,28 +1,46 @@
-{%extends "base.html" %}
-{%block title%}Domain Names{%endblock%}
-{%block maincontent%}
+{%extends "base-fullwidth.html" %}
+{%block title%}Domains - PostgreSQL Community Association (PGCA){%endblock%}
+{% block meta_description %}List of domain names held by the PostgreSQL Community Association (PGCA) non-profit.{% endblock %}
+{% block preload %}
+  <link rel="preload" as="image" href="/static/img/faq-elephant.webp" type="image/webp">
+  <link rel="preload" as="image" href="/static/img/faq-elephant.png" type="image/png">
+{% endblock %}
 
-<h1>Domain Names</h1>
-<p>
-  The PostgreSQL Community Association holds the following domain
-  names on behalf of the PostgreSQL project:
-</p>
+{% block notification %}
+  {% include "partials/_default_notification.html" %}
+{% endblock %}
 
-<p>
-  <ul>
-    <li>pgday.ca</li>
-    <li>postgres.community</li>
-    <li>postgres.org</li>
-    <li>postgres.events</li>
-    <li>postgresql.com</li>
-    <li>postgresql.events</li>
-    <li>postgresql.org</li>
-    <li>postgres.ca</li>
-    <li>postgresql.company</li>
-    <li>postgresql.co.uk</li>
-    <li>postgresql.uk</li>
-    <li>postgres.com</li>
-  </ul>
-</p>
-
+{% block maincontent %}
+<div class="jumbotron jumbotron-fluid mb-0 py-4 py-md-5 banner-bg" id="domains-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="mt-0 mb-2">Domain Names</h1>
+        <p class="lead my-0 text-emphasis">PostgreSQL Community Association (PGCA)</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="domains-info" class="container py-4 py-md-5">
+  <div class="row">
+    <div class="col-12">
+      <p class="mb-4">The PostgreSQL Community Association holds the following domain
+  names on behalf of the PostgreSQL project:</p>
+      <ul>
+        <li>pgday.ca</li>
+        <li>postgres.community</li>
+        <li>postgres.org</li>
+        <li>postgres.events</li>
+        <li>postgresql.com</li>
+        <li>postgresql.events</li>
+        <li>postgresql.org</li>
+        <li>postgres.ca</li>
+        <li>postgresql.company</li>
+        <li>postgresql.co.uk</li>
+        <li>postgresql.uk</li>
+        <li>postgres.com</li>
+      </ul>
+    </div>
+  </div>
+</div>
 {%endblock%}

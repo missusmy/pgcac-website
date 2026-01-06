@@ -1,36 +1,47 @@
-{%extends "base.html" %}
-{%block title%}Privacy Policy{%endblock%}
-{%block maincontent%}
+{%extends "base-fullwidth.html" %}
+{%block title%}Privacy Policy - PostgreSQL Community Association (PGCA){%endblock%}
+{% block meta_description %}Privacy policy for the PGCA non-profit that protects the PostgreSQL open source project’s trademarks and brand assets.{% endblock %}
+{% block preload %}
+  <link rel="preload" as="image" href="/static/img/faq-elephant.webp" type="image/webp">
+  <link rel="preload" as="image" href="/static/img/faq-elephant.png" type="image/png">
+{% endblock %}
 
-<h1>Privacy policy</h1>
+{% block notification %}
+  {% include "partials/_default_notification.html" %}
+{% endblock %}
 
-<p>
-When you visit our website, our servers automatically log your IP address and/or host name.
-</p>
+{% block maincontent %}
+<div class="jumbotron jumbotron-fluid mb-0 py-4 py-md-5 banner-bg" id="privacy-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="mt-0 mb-2">Privacy Policy for PGCA</h1>
+        <p class="lead my-0 text-emphasis">PostgreSQL Community Association (PGCA)</p>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-We store information such as your email address, name and locality only if you decide
-to send us such information by completing a survey, or registering as a user on one
-of our sites. We collect this information to help us improve the content of our
-sites, customize the layout of our web pages and to contact people for technical
-and support purposes. We will not share your email address with other organizations
-unless required by law.
-</p>
+<div class="container py-4 py-md-5">
+  <div class="row">
+    <div class="col-12 col-md-10">
+      <p>
+      When you visit our website, our servers automatically log your IP address and/or host name.
+      </p>
 
-<p>
-If you choose to donate money to us, our payment providers will record your name,
-email address, and other information that you provide to them for financial compliance.
-They will provide us with your name and email address which will be included in our
-own financial records.
-</p>
+      <p>
+      We store information such as your email address, name and locality only if you decide to send us such information by completing a survey, or registering as a user on one of our sites. We collect this information to help us improve the content of our sites, customize the layout of our web pages and to contact people for technical and support purposes. We will not share your email address with other organizations unless required by law.
+      </p>
 
-<p>
-We may collect demographic and interest category information from people via surveys,
-volunteered information, suggestions from members, and other means. Our members may
-voluntarily provide information, including that regarding personal, interests,
-geography, and demographics. The purpose of this data collection is to ensure
-we continue to understand the needs and wants of the PostgreSQL community, and
-therefore can provide the most relevant information, guides, and content.
-</p>
+      <p>
+      If you choose to donate money to us, our payment providers will record your name, email address, and other information that you provide to them for financial compliance. They will provide us with your name and email address which will be included in our own financial records.
+      </p>
+
+      <p>
+      We may collect demographic and interest category information from people via surveys, volunteered information, suggestions from members, and other means. Our members may voluntarily provide information, including that regarding personal, interests, geography, and demographics. The purpose of this data collection is to ensure we continue to understand the needs and wants of the PostgreSQL community, and therefore can provide the most relevant information, guides, and content.
+      </p>
+    </div>
+  </div>
+</div>
 
 {%endblock%}
