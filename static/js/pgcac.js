@@ -40,6 +40,8 @@ theme_OS.addEventListener('change', function (e) {
     if (!nav || !body) return;
     var h = nav.offsetHeight || 0;
     body.style.paddingTop = h + 'px';
+    // Expose navbar height as CSS variable for layout calculations
+    document.documentElement.style.setProperty('--nav-height', h + 'px');
   };
   // Debounce resize handling
   var resizeTimer = null;
@@ -57,3 +59,5 @@ theme_OS.addEventListener('change', function (e) {
   // Also run as soon as DOM is ready
   document.addEventListener('DOMContentLoaded', updatePadding);
 }());
+
+// Note: Scroll-blocking for the mobile navbar has been removed per request.

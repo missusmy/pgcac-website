@@ -1,3 +1,4 @@
+{% set base_url = "https://pgca-staging-5568bdc139b4.herokuapp.com/" %}
 <!doctype html>
 <html lang="en">
 
@@ -19,6 +20,8 @@
   {%- if _meta_desc|trim -%}
     <meta name="description" content="{{ _meta_desc|striptags|trim }}">
   {%- endif -%}
+    {%- set _og_slug -%}{% block og_slug %}pgca-home{% endblock %}{%- endset -%}
+    <meta property="og:image" content="{{ base_url }}/static/img/og/{{ _og_slug|striptags|trim }}.png">
 
   <link rel="icon" type="image/png" href="/static/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/static/favicon.svg" />

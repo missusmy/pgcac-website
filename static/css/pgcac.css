@@ -91,7 +91,12 @@
   --board-bg: rgba(221, 230, 240, 0.5);
   --striped-td-bg-color: #f2f2f2;
   --soft-bg-color: var(--secondary-bg-color);
+  --lowcontrast-bg-color: var(--secondary-bg-color);
   --primary-soft: #e4ebf3;
+}
+
+footer .text-muted {
+  color: #666f76!important;
 }
 
 /** DARK COLOR (overrides only) **/
@@ -140,10 +145,11 @@
   --board-bg: rgba(51, 51, 51, 0.5);
   --striped-td-bg-color: #2c2c2c;
   --soft-bg-color: var(--primary-bg-color);
+  --lowcontrast-bg-color: var(--brand-blue);
   --primary-soft: #121212;
 
   footer .text-muted {
-    color: #f3f5f980 !important;
+    color: #e0e0e0 !important;
   }
 }
 
@@ -532,6 +538,24 @@ th.organisation-logo {
   }
 }
 
+/* When mobile nav is open, lock page scroll */
+/* Removed nav-open scroll lock to allow page scrolling on mobile */
+
+/* Allow the collapsed mobile menu to scroll within viewport */
+#pgNavbar.show {
+  max-height: calc(100vh - var(--nav-height, 0px));
+  -webkit-overflow-scrolling: touch;
+  @media screen and (max-width: 767px) {
+    overflow-y: auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #pgNavbar form {
+    padding: 12px 3px;
+  }
+}
+
 #top-alert {
   background-color: var(--brand-blue);
   border: none;
@@ -605,9 +629,16 @@ th.organisation-logo {
 #news-banner {
   background-image: url(/static/img/news-elephant.png);
   background-image: url(/static/img/news-elephant.webp);
-  background-size: auto 115%;
-  background-position: calc(50% + 18em) 45%;
+  background-size: auto 100%;
+  background-position: calc(50% + 12em) 45%;
   background-repeat: no-repeat;
+  transition: background-position 0.2s ease-in-out, background-size 0.2s ease-in-out;
+  @media screen and (min-width: 432px) {
+    background-size: auto 115%;
+  }
+  @media screen and (min-width: 576px) {
+    background-position: calc(50% + 18em) 45%;
+  }
 }
 
 .link-anchor:target {
@@ -895,7 +926,7 @@ table.table-striped {
   }
 }
 
-#sponsors-intro, #sponsorship-levels2 {
+#sponsors-intro, #sponsorship-levels.sponsors-page {
   p {
     max-width: 86ch;
   }
@@ -908,8 +939,18 @@ table.table-striped {
 .bg-secondary-soft {
   background-color: var(--soft-bg-color) !important;
 }
+.bg-secondary-lowcontrast {
+  background-color: var(--lowcontrast-bg-color) !important;
+}
+[data-theme="dark"], .dark-theme {
+  .bg-secondary-lowcontrast {
+    .text-primary {
+      color: #fff!important;
+    }
+  }
+}
 
-#sponsors-list, #sponsorship-levels2 {
+#sponsors-list, #sponsorship-levels.sponsors-page {
   .table {
     thead, tbody {
       th, td {
@@ -964,13 +1005,13 @@ table.table-striped {
       display: flex;
       width: 300px;
       max-width: 100%;
-      height: calc(80px + 1.5rem);
+      height: calc(80px + 2.5rem);
       align-items: center;
       justify-content: center;
       margin-left: auto;
       margin-right: auto;
       border-radius: 0.25rem;
-      padding: 0.75rem 0;
+      padding: 1.25rem 0;
     }
 
     img.organisation-logo {
@@ -1005,6 +1046,7 @@ table.table-striped {
     margin-top: 0.75rem;
     margin-bottom: 1rem;
     font-weight: 600;
+    font-size: 1.25rem;
   }
 
   .company-url {
@@ -1012,7 +1054,7 @@ table.table-striped {
     margin-top: 0.15rem;
     margin-bottom: 0.75rem;
     text-indent: calc(-1.15em - 0.35rem);
-    font-size: 1rem;
+    font-size: 0.92rem;
     line-height: 1.3;
     white-space: nowrap;
   }
@@ -1026,7 +1068,7 @@ table.table-striped {
     display: inline-block;
     width: 1.15em;
     height: 1.15em;
-    vertical-align: middle;
+    vertical-align: text-bottom;
   }
   .company-url a {
     word-break: break-word;
@@ -1036,6 +1078,23 @@ table.table-striped {
   .company-desc {
     font-size: 1rem;
     margin-bottom: 0.75rem;
+  }
+
+  .card {
+    .card-img-top {
+      background-color: #fff;
+      text-align: center;
+      border-top-left-radius: 0.5rem !important;
+      border-top-right-radius: 0.5rem !important;
+      img {
+        filter: none!important;
+      }
+      & + .card-body {
+        .company-name {
+          margin-top: 0;
+        }
+      }
+    }
   }
 
   @media (min-width: 992px) {
@@ -1049,17 +1108,27 @@ table.table-striped {
     img.organisation-logo {
       max-height: 80px;
     }
+    .card {
+      .card-img-top {
+        padding: 2.5rem;
+      }
+    }
   }
 
   .level-patron {
     .sponsor-item {
       .logo-wrap {
         width: 262px;
-        height: calc(70px + 1.5rem);
+        height: calc(70px + 2.5rem);
       }
     }
     img.organisation-logo {
       max-height: 70px;
+    }
+    .card {
+      .card-img-top {
+        padding: 1.875rem;
+      }
     }
   }
 
@@ -1067,7 +1136,7 @@ table.table-striped {
     .sponsor-item {
       .logo-wrap {
         width: 225px;
-        height: calc(60px + 1.5rem);
+        height: calc(60px + 2.5rem);
       }
     }
     img.organisation-logo {
@@ -1082,16 +1151,47 @@ table.table-striped {
     .sponsor-item {
       .logo-wrap {
         width: 187px;
-        height: calc(50px + 1.5rem);
+        height: calc(50px + 2.5rem);
       }
     }
     img.organisation-logo {
       max-height: 50px;
     }
+    .company-name {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .company-url {
+      margin-top: 0.75rem;
+    }
+    .company-desc {
+      display: none;
+    }
+  }
+
+  .level-supporter, .level-friend {
+    .sponsor-item {
+      @media screen and (max-width: 375px) {
+        -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+        max-width: 75%;
+      }
+    }
+    .donation-date {
+      font-size: 0.9rem;
+    }
+    .company-url {
+      font-size: 0.8rem;
+    }
+    .card {
+      .card-img-top {
+        padding: 1.25rem;
+      }
+    }
   }
 }
 
-#sponsorship-levels2 {
+#sponsorship-levels.sponsors-page {
   .table {
     tbody {
       tr:nth-of-type(even) {
@@ -1110,7 +1210,7 @@ table.table-striped {
 }
 
 [data-theme="light"] {
-  #sponsors-list, #sponsorship-levels2 {
+  #sponsors-list, #sponsorship-levels.sponsors-page {
     .table {
       tbody {
         th, td {
@@ -1132,7 +1232,7 @@ table.table-striped {
 }
 
 [data-theme="dark"] {
-  #sponsors-list, #sponsorship-levels2 {
+  #sponsors-list, #sponsorship-levels.sponsors-page {
     .table {
       thead, tbody {
         th, td {
@@ -1147,6 +1247,9 @@ table.table-striped {
     filter: grayscale(100%) brightness(0) invert(1);
     &.grayscale {
       filter: grayscale(100%) brightness(2);
+    }
+    &.always-color {
+      filter: none;
     }
   }
 }
@@ -1205,8 +1308,11 @@ table.table-striped {
   background-image: url(/static/img/faq-elephant.png);
   background-image: url(/static/img/faq-elephant.webp);
   background-size: auto 180%;
-  background-position: calc(50% + 16em) 45%;
+  background-position: calc(50% + 13em) 45%;
   background-repeat: no-repeat;
+  @media screen and (min-width: 768px) {
+    background-position-x: calc(50% + 16em);
+  }
 }
 
 .faq-card {

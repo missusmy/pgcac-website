@@ -13,3 +13,4 @@ runtime.txt
 site-refresh.bundle
 site-refresh.patch
 site-refresh_files.zip
+templates/pages-backup
