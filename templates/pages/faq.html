@@ -1,75 +1,136 @@
-{% extends "base.html" %}
-{% block title %}PGCA Frequently Asked Questions{% endblock %}
+{% extends "base-fullwidth.html" %}
+{% block title %}FAQ - PostgreSQL Community Association (PGCA) non-profit{% endblock %}
+{% block meta_description %}Frequently asked questions about the PGCA non-profit that protects the PostgreSQL project’s trademarks and brand assets.{% endblock %}
+{% block preload %}
+  <link rel="preload" as="image" href="/static/img/faq-elephant.webp" type="image/webp">
+  <link rel="preload" as="image" href="/static/img/faq-elephant.png" type="image/png">
+{% endblock %}
+
+{% block notification %}
+  {% include "partials/_default_notification.html" %}
+{% endblock %}
+
 {% block maincontent %}
+<div class="jumbotron jumbotron-fluid mb-0 py-4 py-md-5 banner-bg" id="faq-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="mt-0 mb-2">FAQ for PGCA</h1>
+        <p class="lead my-0 text-emphasis">PostgreSQL Community Association (PGCA)</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="faq-intro" class="container py-4 py-md-5">
+  <div class="row">
+    <div class="col-12 col-md-10">
+      <p class="mb-0">This page answers some of the most frequently asked questions about the Postgres Community Association. If you have any additional questions, please do not hesitate to email the PGCA at <a href="mailto:board@postgres.ca" class="font-weight-normal">board@postgres.ca</a>.
+      </p>
+    </div>
+  </div>
+</div>
+<div id="faq-general" class="bg-secondary-soft">
+  <div class="container py-4 py-md-5">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-primary mb-4">General</h2>
+        <div class="card faq-card mb-3"><div class="card-body">
+          <h3 class="h5">What do you do?</h3>
+          <p>At the request of the <a href="https://www.postgresql.org/developer/core/" target="_blank" rel="noopener">PostgreSQL Core Team</a>, the primary task of
+            PGCA is to manage and maintain assets (domain names and trademarks) for the PostgreSQL Project.</p>
+        </div></div>
+        <div class="card faq-card mb-3"><div class="card-body">
+          <h3 class="h5">How is the PGCA non-profit funded?</h3>
+          <p>PGCA&rsquo;s funding comes entirely from donations.</p>
+        </div></div>
+        <div class="card faq-card mb-3"><div class="card-body">
+          <h3 class="h5">Why doesn't the project manage its assets directly?</h3>
+          <p>Neither the PostgreSQL Global Development Group nor the PostgreSQL Core Team are legal entities, and thus they
+            cannot own assets, except as individuals.</p>
+        </div></div>
+        <div class="card faq-card mb-3"><div class="card-body">
+          <h3 class="h5">Where is the PGCA website’s source code?</h3>
+          <p>The full source code for this website is available in <a href="https://git.postgresql.org/gitweb?p=pgcac-website.git;a=summary" target="_blank" rel="noopener">our Git repository</a> under the PostgreSQL licence.</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="faq-trademarks" class="bg-primary-soft">
+  <div class="container py-4 py-md-5">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-primary mb-4">Trademarks</h2>
+        <div class="card faq-card mb-3"><div class="card-body">
+          <h3 class="h5">How can I use one of the PostgreSQL trademarks?</h3>
+          <p>Many uses of our marks fall under "fair use" which does not require any permission. The <a href="https://www.postgresql.org/about/policies/trademarks/" target="_blank" rel="noopener">PostgreSQL Trademark Policy</a> describes these uses and general requirements. We worked very hard with our legal counsel to make the policy as flexible and permissive as possible. For uses that fall outside of the policy, a general use or tradename licence may be granted by PGCA on application.</p>
+        </div></div>
 
-  <h1>Frequently Asked Questions</h1>
-  <p>
-    This page attempts to answer some of the questions we are commonly asked about the Postgres Community Association.
-    If you have any additional questions, please do not hesitate to <a href="mailto:board@postgres.ca">email us</a>.
-  </p>
+        <div class="card faq-card mb-3"><div class="card-body">
+          <h3 class="h5">What are the criteria for receiving a general use or tradename licence from PGCA?</h3>
+          <p>The PGCA board evaluates several criteria for issuing a licence that falls outside of fair use, such as
+            modifications to the marks, the use of the marks within their context, would the marks create confusion with the
+            community marks, and if the usage of marks could risk bringing the project into disrepute, to name a few.</p>
+        </div></div>
 
-  <h2>General</h2>
+        <div class="card faq-card mb-3"><div class="card-body">
+          <h3 class="h5">How much does PGCA charge for Postgres trademark licences?</h3>
+          <p>There is no charge for a trademark licence. In rare cases where a non-standard agreement may be required which
+            involves significant work from counsel, we may ask for a contribution towards the cost.</p>
+        </div></div>
 
-  <h3>What do you do?</h3>
-  <p>At the request of the <a href="https://www.postgresql.org/developer/core/">Core Team</a>, the primary task of
-    PGCA is to manage and maintain assets (domain names and trademarks) for the PostgreSQL Project.</p>
+        <div class="card faq-card mb-3"><div class="card-body">
+          <h3 class="h5">Why do some other organisations have related trademarks?</h3>
+          <p>These generally fall into one of a number of categories:</p>
+          <ul>
+            <li>They are unauthorised, and may be (if appropriate) or are being disputed.</li>
+            <li>The organisation has a licence agreement with us and has agreed to phase out their trademark registrations.</li>
+            <li>They are an NPO who follow the community NPO guidelines, such as PostgreSQL Europe, who are working with PGCA to adopt pre-existing marks into the community framework.</li>
+          </ul>
+        </div></div>
 
-  <h3>How are you funded?</h3>
-  <p>Our funding comes entirely from donations.</p>
+        <div class="card faq-card mb-3"><div class="card-body">
+          <h3 class="h5">Do you have a list of the licence agreements you've entered into?</h3>
+          <p>There is no public list as the agreements are confidential, including the names of the parties involved.</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <h3>Why doesn't the project manage its assets directly?</h3>
-  <p>Neither the PostgreSQL Global Development Group or the PostgreSQL Core Team are legal entities, and thus they
-    cannot own assets, except as individuals.</p>
+<div id="faq-governance" class="bg-secondary-soft">
+  <div class="container py-4 py-md-5">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-primary mb-4">Governance</h2>
+        <div class="card faq-card mb-3"><div class="card-body">
+          <h3 class="h5">Why aren't there open and public elections to the PGCA board?</h3>
+          <p>It's essential to make sure that it's not possible for a rogue actor to attempt to take over PGCA and gain
+            control of the trademarks and domains owned by the project. This is a very difficult problem to solve as any
+            well-funded entity could potentially have large numbers of their staff join as members and then vote to change
+            the board and bylaws however they see fit, if we were to open up membership to the public.</p>
+        </div></div>
 
-  <h2>Trademarks</h2>
+        <div class="card faq-card mb-3"><div class="card-body">
+          <h3 class="h5">Can I apply to join the PGCA board?</h3>
+          <p>We always consider applications; this is done at the AGM which typically happens in late May or early June. Our
+            articles of incorporation restrict the board to a maximum of 7 and our bylaws require that at least two of those
+            directors be members of the PostgreSQL Core Team, but we would also only be likely to accept people with long
+            term good standing in the PostgreSQL Community, with a history of meaningful contributions. We would also need
+            to ensure that no single organisation employs the majority of board members.</p>
+        </div></div>
 
-  <h3>I want to use one of your trademarks. How do I do so?</h3>
-  <p>Many uses of our marks fall under "fair use" which does not require any permission. The
-    <a href="https://www.postgresql.org/about/policies/trademarks/">Trademark Policy</a> describes these uses and
-    general requirements. We worked very hard with our legal counsel to make the policy as flexible and permissive
-    as possible. For uses that fall outside of the policy, a general use or tradename licence may be granted by
-    PGCA on application.</p>
-
-  <h3>What are the criteria for receiving a general use or tradename licence?</h3>
-  <p>The PGCA board evaluates several criteria for issuing a licence that falls outside of fair use, such as
-    modifications to the marks, the use of the marks within their context, would the marks create confusion with the
-    community marks, and if the usage of marks could risk bringing the project into disrepute, to name a few.</p>
-
-  <h3>How much do you charge for trademark licences?</h3>
-  <p>There is no charge for a trademark licence. In rare cases where a non-standard agreement may be required which
-    involves significant work from counsel, we may ask for a contribution towards the cost.</p>
-
-  <h3>Why do some other organisations have related trademarks?</h3>
-  <p>These generally fall into one of a number of categories:</p>
-  <ul>
-    <li>They are unauthorised, and may be (if appropriate) or are being disputed.</li>
-    <li>The organisation has a licence agreement with us.</li>
-    <li>They are an NPO who follow the community NPO guidelines, such as PostgreSQL Europe, who are working with PGCA
-      to adopt pre-existing marks into the community framework.</li>
-  </ul>
-
-  <h3>Do you have a list of the licence agreements you've entered into?</h3>
-  <p>There is no public list as the agreements are confidential, including the names of the parties involved.</p>
-
-  <h2>Governance</h2>
-
-  <h3>Why aren't there open and public elections to the PGCA board?</h3>
-  <p>It's essential to make sure that it's not possible for a rogue actor to attempt to take over PGCA and gain
-    control of the trademarks and domains owned by the project. This is a very difficult problem to solve as any
-    well-funded entity could potentially have large numbers of their staff join as members and then vote to change
-    the board and bylaws however they see fit, if we were to open up membership to the public.</p>
-
-  <h3>Can I apply to join the PGCA board?</h3>
-  <p>We always consider applications; this is done at the AGM which typically happens in late May or early June. Our
-    articles of incorporation restrict the board to a maximum of 7 and our bylaws require that at least two of those
-    directors be members of the PostgreSQL Core Team, but we would also only be likely to accept people with long
-    term good standing in the PostgreSQL Community, with a history of meaningful contributions. We would also need
-    to ensure that no single organisation employs the majority of board members.</p>
-
-  <h3>Why do you not have term limits for board members?</h3>
-  <p>Managing trademarks in particular can be extremely time consuming, stressful, and requires an understanding of
-    trademark law, particularly in how it applies to open source software, and processes to minimise the need to
-    consult counsel (which can be very expensive). The current members of the board have spent years learning from
-    professionals, and forcing them to step down after a fixed period could be extremely damaging to the organisation
-    if suitably experienced replacements could not be found.</p>
+        <div class="card faq-card mb-3"><div class="card-body">
+          <h3 class="h5">Why do you not have term limits for board members?</h3>
+          <p>Managing trademarks in particular can be extremely time consuming, stressful, and requires an understanding of
+            trademark law, particularly in how it applies to open source software, and processes to minimise the need to
+            consult counsel (which can be very expensive). The current members of the board have spent years learning from
+            professionals, and forcing them to step down after a fixed period could be extremely damaging to the organisation
+            if suitably experienced replacements could not be found.</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</div>
+{% include "partials/_community_support.html" %}
 {% endblock %}

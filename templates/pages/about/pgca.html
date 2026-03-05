@@ -1,53 +1,164 @@
-{%extends "base.html" %}
-{%block title%}Trademarks{%endblock%}
-{%block maincontent%}
+{%extends "base-fullwidth.html" %}
+{%block title%}About - PostgreSQL Community Association (PGCA) non-profit{%endblock%}
+{% block meta_description %}About the PGCA non-profit and its board. The Postgres ecosystem—used by millions of companies, developers, and enthusiasts—relies on PGCA to protect the Postgres trademarks and brand assets.{% endblock %}
 
-<h1>About</h1>
-<p>
-    The PostgreSQL Community Association (PGCA) is a Canadian Not For Profit 
-    corporation chartered by the PostgreSQL Core Team in 2011 to hold and 
-    protect the Postgres brand assets globally.
-</p>
+{% block notification %}
+  {% include "partials/_default_notification.html" %}
+{% endblock %}
 
-<p>
-    The brand assets that PGCA currently stewards are trademarks and domains 
-    that are required by the Open Source Postgres project. 
-</p>
+{% block maincontent %}
+<div class="jumbotron jumbotron-fluid banner-bg mb-0 py-5" id="about-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="mt-0 mb-2">About the PGCA <nobr>non-profit</nobr></h1>
+        <p class="lead my-0 text-emphasis">PostgreSQL Community Association (PGCA)</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="about-intro">
+  <div class="container py-4 py-md-5">
+    <div class="row">
+      <div class="col-12">
+        <p>The PostgreSQL Community Association (PGCA) is a Canadian Not For Profit corporation chartered by the PostgreSQL Core Team in 2011 to hold and protect the Postgres brand assets globally.</p>
+        <p>The brand assets that PGCA currently stewards are trademarks and domains that are required by the Open Source Postgres project.</p>
+        <p>The Postgres ecosystem—worth billions of dollars and used by millions of companies, developers, and enthusiasts—relies on PGCA’s stewardship of the Postgres brand assets.</p>
+        <p>The <strong>PostgreSQL Trademark policy</strong> can be found at: <a href="https://www.postgresql.org/about/policies/trademarks/" target="_blank" rel="noopener">postgresql.org/about/policies<wbr>/trademarks/</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="board-members" class="py-4 py-md-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-primary mb-4">PGCA Board Members</h2>
+        <p class="mb-5">The board of the PostgreSQL Community Association currently consists of the following individuals.</p>
 
-<p>
-    The Postgres ecosystem—worth billions of dollars and used by millions of 
-    companies, developers, and enthusiasts—relies on PGCA’s stewardship of the 
-    Postgres brand assets.
-</p>
+        <div class="row ">
+          <!-- Dave Page -->
+          <div class="col-12 col-sm-6 col-lg-3 mb-5">
+            <div class="card h-100 bg-transparent border-0">
+              <img src="/static/img/dave-page.jpg" class="card-img-top mb-1" alt="Dave Page" />
+              <div class="card-body d-flex flex-column p-0">
+                <h5 class="card-title mb-1 text-emphasis">Dave Page <small class="font-weight-normal">(Chairman)</small></h5>
+                <div class="text-primary mb-3 fs-6 font-weight-semibold">pgEdge</div>
+                <p class="card-text">PostgreSQL Core team member, working on Postgres since 1998. Project lead for pgAdmin. Webmaster and sysadmin for PostgreSQL.org. Chief Technology Officer at pgEdge. Alum: EDB and University of Liverpool.</p>
+              </div>
+            </div>
+          </div>
 
-<h2>Board Members</h2>
-<p>
-    The board of the PostgreSQL Community Association currently
-    consists of the following individuals.</p>
- <ul>
-     <li>Dave Page (Chairman)</li>
-     <li>Steve Singer (Treasurer)</li>
-     <li>Jonathan Katz (Secretary)</li>
-     <li>Jaime Casanova</li>
-     <li>Peter Eisentraut</li>
-     <li>Marc Fournier</li>
-     <li>Claire Giordano</li>
-</ul>
+          <!-- Steve Singer -->
+          <div class="col-12 col-sm-6 col-lg-3 mb-5">
+            <div class="card h-100 bg-transparent border-0">
+              <img src="/static/img/steve-singer.jpg" class="card-img-top mb-1" alt="Steve Singer" />
+              <div class="card-body d-flex flex-column p-0">
+                <h5 class="card-title mb-1 text-emphasis">Steve Singer <small class="font-weight-normal">(Treasurer)</small></h5>
+                <div class="text-primary mb-3 fs-6 font-weight-semibold">Nav Technologies</div>
+                <p class="card-text">PostgreSQL Major Contributor and author of Slony database replication system. Distributed systems and database expert, working with Postgres since 2001. Principal Software Engineer at Nav Technologies.</p>
+              </div>
+            </div>
+          </div>
 
-<p>
-  You can contact the board of the PostgreSQL Community Association at
-  <a href="mailto:board@lists.postgres.ca">board@lists.postgres.ca</a>.
-</p>
+          <!-- Jonathan Katz -->
+          <div class="col-12 col-sm-6 col-lg-3 mb-5">
+            <div class="card h-100 bg-transparent border-0">
+              <img src="/static/img/jonathan-katz.jpg" class="card-img-top mb-1" alt="Jonathan Katz" />
+              <div class="card-body d-flex flex-column p-0">
+                <h5 class="card-title mb-1 text-emphasis">Jonathan Katz <small class="font-weight-normal">(Secretary)</small></h5>
+                <div class="text-primary mb-3 fs-6 font-weight-semibold">Databricks</div>
+                <p class="card-text">PostgreSQL Core team member and Major Contributor, focused on advocacy and governance since 2009. Board member of the PgUS non-profit. Senior Staff Product Manager at Databricks. Alum: Crunchy Data & AWS.</p>
+              </div>
+            </div>
+          </div>
 
-<h2>Board Members Emeriti</h2>
-<p>
-    The following individuals previously served on the board of the PostgreSQL
-    Community Association, and we recognize their contributions to the
-    organization:
-</p>
-<ul>
-    <li>Christopher Browne (Treasurer) 2011- 2020</li>
-    <li>Dan Langille 2012 - 2017</li>
-    <li>Josh Berkus (Secretary) 2011 - 2018</li>
-</ul>
+          <!-- Jaime Casanova -->
+          <div class="col-12 col-sm-6 col-lg-3 mb-5">
+            <div class="card h-100 bg-transparent border-0">
+              <img src="/static/img/jaime-casanova.jpg" class="card-img-top mb-1" alt="Jaime Casanova" />
+              <div class="card-body d-flex flex-column p-0">
+                <h5 class="card-title mb-1 text-emphasis">Jaime Casanova</h5>
+                <div class="text-primary mb-3 fs-6 font-weight-semibold">Systemguards</div>
+                <p class="card-text">PostgreSQL Significant Contributor. Working with PostgreSQL since 7.2. Director of Professional Services at Systemguards. Long-time supporter of PostgreSQL user groups & community events in Latin America.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Peter Eisentraut -->
+          <div class="col-12 col-sm-6 col-lg-3 mb-5">
+            <div class="card h-100 bg-transparent border-0">
+              <img src="/static/img/peter-eisentraut.jpg" class="card-img-top mb-1" alt="Peter Eisentraut" />
+              <div class="card-body d-flex flex-column p-0">
+                <h5 class="card-title mb-1 text-emphasis">Peter Eisentraut</h5>
+                <div class="text-primary mb-3 fs-6 font-weight-semibold">EDB</div>
+                <p class="card-text">PostgreSQL Committer, Core team member, and Major Contributor, working on the Postgres project since 1999. Works on the SQL standard. VP and Chief Architect of Database Servers at EDB. Alum: 2nd Quadrant.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Marc Fournier -->
+          <div class="col-12 col-sm-6 col-lg-3 mb-5">
+            <div class="card h-100 bg-transparent border-0">
+              <img src="/static/img/marc-fournier.jpg" class="card-img-top mb-1" alt="Marc Fournier" />
+              <div class="card-body d-flex flex-column p-0">
+                <h5 class="card-title mb-1 text-emphasis">Marc Fournier</h5>
+                <div class="text-primary mb-3 fs-6 font-weight-semibold">EDB</div>
+                <p class="card-text">Founding Core Team member for the PostgreSQL open source project in 1996. Long-time PostgreSQL supporter and former PostgreSQL Major Contributor. Field Solution Architect at EDB. Alum: 2nd Quadrant.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Claire Giordano -->
+          <div class="col-12 col-sm-6 col-lg-3 mb-5">
+            <div class="card h-100 bg-transparent border-0">
+              <img src="/static/img/claire-giordano.jpg" class="card-img-top mb-1" alt="Claire Giordano" />
+              <div class="card-body d-flex flex-column p-0">
+                <h5 class="card-title mb-1 text-emphasis">Claire Giordano</h5>
+                <div class="text-primary mb-3 fs-6 font-weight-semibold">Microsoft</div>
+                <p class="card-text">PostgreSQL Significant Contributor. Hosts monthly Talking Postgres podcast. Head of open source community initiatives for Postgres at Microsoft. Alum of Sun Microsystems, Citus Data, and Brown University.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="contact-board" class="py-5 py-md-6">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 d-flex align-items-center py-4">
+        <div class="icon mr-4">
+          <svg alt="rolodex icon">
+            <title>rolodex icon</title>
+            <use xlink:href="/static/img/icon-sprite.svg#rolodex-icon"></use>
+          </svg>
+        </div>
+        <p class="mb-0">
+          You can contact the PGCA board at
+          <a href="mailto:board@postgres.ca">board@postgres.ca</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="board-emeriti" class="py-4 py-md-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-primary mb-4">Board Members Emeriti</h2>
+        <p class="mb-4" style="max-width:84ch">The following individuals previously served on the board of the PostgreSQL Community Association, and we recognize their contributions to the organization:
+        </p>
+        <ul class="pl-4">
+          <li class="pl-2 mb-2">Christopher Browne (Treasurer) 2011- 2020</li>
+          <li class="pl-2 mb-2">Dan Langille 2012 - 2017</li>
+          <li class="pl-2">Josh Berkus (Secretary) 2011 - 2018</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include "partials/_thank_you.html" %}
 {%endblock%}

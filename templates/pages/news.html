@@ -1,0 +1,122 @@
+{% extends "base-fullwidth.html" %}
+{% block title %}News - PostgreSQL Community Association (PGCA) non-profit{% endblock %}
+{% block meta_description %}Latest news updates for the PGCA non-profit that protects the PostgreSQL project’s trademarks and brand assets.
+{% endblock %}
+
+{% block preload %}
+  <link rel="preload" as="image" href="/static/img/news-elephant.webp" type="image/webp">
+  <link rel="preload" as="image" href="/static/img/news-elephant.png" type="image/png">
+{% endblock %}
+
+{% block notification %}
+  {% include "partials/_default_notification.html" %}
+{% endblock %}
+
+{% block maincontent %}
+<div class="jumbotron jumbotron-fluid banner-bg mb-0 py-5" id="news-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="mt-0 mb-2">Latest News</h1>
+        <p class="lead my-0 text-emphasis">PostgreSQL Community Association (PGCA)</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="news" class="py-5">
+  <div class="news-cards">
+    <div class="card">
+      <div class="container margin">
+        <a class="link-anchor" id="2025-07-02" name="2025-07-02"></a>
+        <h3><span class="bd-content-title text-emphasis">PGCA Sponsorship prospectus updated<a class="anchorjs-link" aria-label="Anchor" href="#2025-07-02"></a></span></h3>
+        <h5 class="mt-0 mb-4">2 July 2025</h5>
+        <p>As of July 2025, the sponsorship prospectus for the PostgreSQL
+          Community Association (PGCA) has been updated. The volunteer-run
+          PGCA non-profit relies entirely on sponsorship and donations from
+          corporations and individuals like you.
+        </p>
+        <p>The PGCA Board and the PostgreSQL Core Team deeply appreciate the
+          generous financial support we receive from corporations, small
+          businesses, and individual donors. Your annual contributions make
+          it possible for us to protect the PostgreSQL brand assets.
+        </p>
+        <p>To learn more about sponsorship levels, where your sponsorship
+          dollars will go, and how PGCA recognizes donors—please review the
+          <a href="/static/pdf/pgca-funding-2025.pdf" target="_blank" rel="noopener">updated PGCA
+            sponsorship prospectus.</a>
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="container margin">
+        <a class="link-anchor" id="2025-05-14" name="2025-05-14"></a>
+        <h3><span class="bd-content-title text-emphasis">Board members confirmed<a class="anchorjs-link" aria-label="Anchor" href="#2025-05-14"></a></span></h3>
+        <h5 class="mt-0 mb-4">14 May 2025</h5>
+        <p>Following an AGM and board meeting held at PGConf.dev 2025 in Montreal, the
+          PostgreSQL Community Association of Canada's board has been confirmed
+          as:</p>
+        <ul>
+          <li>Dave Page (Chairman)</li>
+          <li>Steve Singer (Treasurer)</li>
+          <li>Jonathan Katz (Secretary)</li>
+          <li>Jaime Casanova</li>
+          <li>Peter Eisentraut</li>
+          <li>Marc Fournier</li>
+          <li>Claire Giordano</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="container margin">
+        <a class="link-anchor" id="2023-12-06" name="2023-12-06"></a>
+        <h3><span class="bd-content-title text-emphasis">Updates on trademark actions against the PostgreSQL community<a class="anchorjs-link" aria-label="Anchor" href="#2023-12-06"></a></span></h3>
+        <h5 class="mt-0 mb-4">6 December 2023</h5>
+        <p>
+          The PostgreSQL Community Association wishes to provide an update on
+          trademark actions that were taken by Fundación PostgreSQL.
+        </p>
+        <p>
+          On November 17, 2023, the PostgreSQL Community Association, PostgreSQL
+          Europe, and Fundación PostgreSQL reached a settlement on all outstanding
+          trademark issues. Fundación PostgreSQL has surrendered all trademarks
+          and entered into a trademark license with the PostgreSQL Community
+          Association.
+        </p>
+        <p>
+          All three organizations are pleased to have reached an amicable
+          resolution, and all will continue to work on activities to help grow the
+          PostgreSQL community.
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="container margin">
+        <a class="link-anchor" id="2023-07-27" name="2023-07-27"></a>
+        <h3><span class="bd-content-title text-emphasis">Setting the record straight: More updates on a trademark dispute<a class="anchorjs-link" aria-label="Anchor" href="#2023-07-27"></a></span></h3>
+        <h5 class="mt-0 mb-4">27 July 2023</h5>
+        <p>On 27th July we published a
+          <a href="https://www.postgresql.org/about/news/setting-the-record-straight-more-updates-on-a-trademark-dispute-2682/" target="_blank" rel="noopener">news article</a>
+          updating the community on the ongoing trademark dispute with Fundación PostgreSQL
+          in response to a blog post on their website.
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="container margin">
+        <a class="link-anchor" id="2023-07-03" name="2023-07-03"></a>
+        <h3><span class="bd-content-title text-emphasis">Change of Name<a class="anchorjs-link" aria-label="Anchor" href="#2023-07-03"></a></span></h3>
+        <h5 class="mt-0 mb-4">3 July 2023</h5>
+        <p>Following discussion with the PostgreSQL Core Team, the Association has
+          now registered <b>PostgreSQL Community Association</b> (PGCA) as a business
+          name and will primarily use that name in the future.
+        </p>
+        <p>The <b>PostgreSQL Community Association of Canada</b> remains the legal name
+          of the Association, and may still be seen in official documents, contracts,
+          and elsewhere.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% include "partials/_thank_you.html" %}
+{% endblock %}
