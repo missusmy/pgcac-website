@@ -76,10 +76,10 @@ On the Homepage, place the news item date and title under `#latest-news > .conta
 <div class="col-12 col-md-6 col-lg-4 mb-4">
   <div class="card h-100">
     <div class="card-body d-flex flex-column">
-      <a class="link-anchor" id="2026-03-03" name="2026-03-03"></a> <!-- date as both 'id' and 'name' -->
-      <h5 class="mt-0 mb-2">3 March 2026</h5>
+      <a class="link-anchor" id="2026-03-06" name="2026-03-06"></a> <!-- date as both 'id' and 'name' -->
+      <h5 class="mt-0 mb-2">6 March 2026</h5>
       <h3 class="mt-0 mb-4 text-emphasis">Updates to PGCA Sponsorship Levels & Website</h3>
-      <p class="mt-auto"><a href="/news#2026-03-03">Read item</a></p> <!-- link to news item on the news page -->
+      <p class="mt-auto"><a href="/news#2026-03-06">Read item</a></p> <!-- link to news item on the news page -->
     </div>
   </div>
 </div>
@@ -90,9 +90,9 @@ On the News page, each news item is a `.card` under `#news > .news-cards`. Examp
 ```html
 <div class="card">
   <div class="container margin">
-    <a class="link-anchor" id="2026-03-03" name="2026-03-03"></a>
-    <h3><span class="bd-content-title text-emphasis">[news item title]<a class="anchorjs-link" aria-label="Anchor" href="#2026-03-03"></a></span></h3><!-- anchor link appears on hover -->
-    <h5 class="mt-0 mb-4">3 March 2026</h5>
+    <a class="link-anchor" id="2026-03-06" name="2026-03-06"></a>
+    <h3><span class="bd-content-title text-emphasis">[news item title]<a class="anchorjs-link" aria-label="Anchor" href="#2026-03-06"></a></span></h3><!-- anchor link appears on hover -->
+    <h5 class="mt-0 mb-4">6 March 2026</h5>
     [news item content]
   </div>
 </div>

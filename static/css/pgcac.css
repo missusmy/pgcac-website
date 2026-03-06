@@ -93,10 +93,7 @@
   --soft-bg-color: var(--secondary-bg-color);
   --lowcontrast-bg-color: var(--secondary-bg-color);
   --primary-soft: #e4ebf3;
-}
-
-footer .text-muted {
-  color: #666f76!important;
+  --card-border: rgba(0,0,0,0.125);
 }
 
 /** DARK COLOR (overrides only) **/
@@ -147,9 +144,10 @@ footer .text-muted {
   --soft-bg-color: var(--primary-bg-color);
   --lowcontrast-bg-color: var(--brand-blue);
   --primary-soft: #121212;
+  --card-border: rgba(255,255,255,0.125);
 
   footer .text-muted {
-    color: #e0e0e0 !important;
+    color: #f3f5f980 !important;
   }
 }
 
@@ -495,6 +493,7 @@ th.organisation-logo {
   max-width: 100%;
   margin: auto;
   .card {
+    border-color: var(--card-border);
     h5 {
       font-weight: 400!important;
     }
@@ -1304,7 +1303,7 @@ table.table-striped {
   }
 }
 
-#faq-banner, #trademarks-banner, #domains-banner, #privacy-banner {
+#faq-banner, #trademarks-banner, #domains-banner, #privacy-banner, #downloads-banner {
   background-image: url(/static/img/faq-elephant.png);
   background-image: url(/static/img/faq-elephant.webp);
   background-size: auto 180%;
