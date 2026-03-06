@@ -1,2 +1,17 @@
+.claude
+.gitignore
 .idea
+.DS_Store
 pythonenv
+.python-version
+tools
+README.md
+postgres.ca
+Procfile
+scripts
+requirements.txt
+runtime.txt
+site-refresh.bundle
+site-refresh.patch
+site-refresh_files.zip
+templates/pages-backup

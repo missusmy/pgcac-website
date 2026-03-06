@@ -1,24 +1,48 @@
-{%extends "base.html" %}
-{%block title%}Trademarks{%endblock%}
-{%block maincontent%}
+{%extends "base-fullwidth.html" %}
+{%block title%}Trademarks - PostgreSQL Community Association (PGCA){%endblock%}
+{% block meta_description %}List of trademarks held and stewarded by the PostgreSQL Community Association (PGCA) non-profit.{% endblock %}
+{% block og_slug %}pgca-trademarks{% endblock %}
+{% block preload %}
+  <link rel="preload" as="image" href="/static/img/faq-elephant.webp" type="image/webp">
+  <link rel="preload" as="image" href="/static/img/faq-elephant.png" type="image/png">
+{% endblock %}
 
-<h1>Trademarks</h1>
+{% block notification %}
+  {% include "partials/_default_notification.html" %}
+{% endblock %}
 
-<p>
-  The PostgreSQL Community Association holds the following trademarks
-  on behalf of the PostgreSQL project:
-</p>
-
-<p>
-  <ul>
-    <li><strong>PostgreSQL</strong> (Canada, EU, US)</li>
-    <li><strong>Postgres</strong> (EU, US)</li>
-    <li><a href="/static/img/slonik_mark.svg">Slonik Elephant Image</a> (EU, US)</li>
-  </ul>
-</p>
-<p>
-  These trademarks can be used according to the
-  <a href="https://www.postgresql.org/about/policies/trademarks/"> PostgreSQL
-    trademark Policy</a>.
-  </p>
+{% block maincontent %}
+<div class="jumbotron jumbotron-fluid mb-0 py-4 py-md-5 banner-bg" id="trademarks-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="mt-0 mb-2">Trademarks</h1>
+        <p class="lead my-0 text-emphasis">PostgreSQL Community Association (PGCA)</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="trademarks-info" class="container py-4 py-md-5">
+  <div class="row">
+    <div class="col-12 col-md-10">
+      <p class="mb-0">The PostgreSQL Community Association of Canada (PGCA) holds the trademarks for the PostgreSQL project on behalf of the PostgreSQL Global Development Group and the PostgreSQL Core Team. This page provides information about the trademarks held by PGCA and how they can be used.</p>
+    </div>
+  </div>
+</div>
+<div id="trademarks-list">
+  <div class="container pb-4 pb-md-5">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-primary mb-4">PGCA-held trademarks</h2>
+        <p>The PostgreSQL Community Association holds the following trademarks on behalf of the PostgreSQL project:</p>
+        <ul>
+          <li><strong>PostgreSQL</strong> (Canada, EU, US)</li>
+          <li><strong>Postgres</strong> (EU, US)</li>
+          <li><a href="/static/img/slonik_mark.svg">Slonik Elephant Image</a> (EU, US)</li>
+        </ul>
+        <p>These trademarks can be used according to the <a href="https://www.postgresql.org/about/policies/trademarks/" target="_blank" rel="noopener"> PostgreSQL Trademark Policy</a>.</p>
+      </div>
+    </div>
+  </div>
+</div>
 {%endblock%}

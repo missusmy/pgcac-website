@@ -1,63 +1,237 @@
-{% extends "base.html" %}
-{% block title %}Donate to PGCA{% endblock %}
+{% extends "base-fullwidth.html" %}
+{% block title %}Donate - PostgreSQL Community Association (PGCA) non-profit{% endblock %}
+{% block meta_description %}Donate to PGCA to protect the PostgreSQL project’s trademarks and brand assets. All of the funding for the volunteer-run PGCA non-profit comes from donations from individuals and corporations—and every donation makes a difference.{% endblock %}
+{% block og_slug %}pgca-donate{% endblock %}
+
+{% block preload %}
+  <link rel="preload" as="image" href="/static/img/donate-elephant.webp" type="image/webp">
+  <link rel="preload" as="image" href="/static/img/donate-elephant.png" type="image/png">
+{% endblock %}
+
 {% block maincontent %}
+<div class="jumbotron jumbotron-fluid banner-bg mb-0 pt-4 pb-5" id="donate-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1 class="mt-2 mb-4">Donate to PGCA to protect the PostgreSQL trademarks</h1>
+        <p class="text-emphasis">All of the funding for the volunteer-run PGCA non-profit comes from donations from corporations & individuals like you. And every donation counts.</p>
+        <p class="mb-0 text-emphasis">If you rely on PostgreSQL database, we ask you to give back to the project by donating to PGCA. Even a $10 gift, the price of coffee with a friend, will make a real difference.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="two-ways" class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="text-primary mb-5 mt-1">Two Ways to Donate</h2>
 
-  <h1>Donate</h1>
-  <p>
-    The PostgreSQL Community Association is a not-for-profit
-    organisation that relies on your donations to fulfill its mission of managing
-    and protecting key assets for the PostgreSQL project, such as domain names and
-    trademarks.
-  </p>
+        <!-- Donation Cards Row -->
+        <div class="row align-items-stretch mb-3">
+          <!-- Stripe Donation Widget: 2/3 width -->
+          <div class="col-12 col-lg-8 mb-4 mb-lg-0">
+            <div class="card shadow-sm mb-4 h-100">
+              <div class="card-body">
+                <h3 class="mb-4 pb-1 text-center text-primary">Donate via Credit/Debit</h3>
+                <!-- Tabs -->
+                <ul class="nav nav-pills nav-fill" id="donationTabs" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="monthly-tab" data-toggle="tab" href="#monthly" role="tab" aria-controls="monthly" aria-selected="false">Monthly</a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="onetime-tab" data-toggle="tab" href="#onetime" role="tab" aria-controls="onetime" aria-selected="true">One-time</a>
+                  </li>
+                </ul>
 
-  <h2>Sponsorship</h2>
-  <p>
-    To learn about sponsorship opportunities, please review our
-    <a href="/static/pdf/pgca-funding-2025.pdf">sponsorship prospectus</a>.
-  </p>
+                <!-- Tab panes -->
+                <div class="tab-content pt-4 h-100" id="donationTabsContent">
+                  <!-- Monthly Donations -->
+                  <div class="tab-pane fade" id="monthly" role="tabpanel" aria-labelledby="monthly-tab">
+                    <div class="row g-2 small-gutters" id="monthlyAmounts">
+                      <div class="col-6 col-md-4">
+                        <button class="btn btn-outline-primary w-100 js-choose-monthly" data-amount="10" aria-pressed="false">CA$10</button>
+                      </div>
+                      <div class="col-6 col-md-4">
+                        <button class="btn btn-outline-primary w-100 js-choose-monthly" data-amount="15" aria-pressed="false">CA$15</button>
+                      </div>
+                      <div class="col-6 col-md-4">
+                        <button class="btn btn-outline-primary w-100 js-choose-monthly" data-amount="20" aria-pressed="false">CA$20</button>
+                      </div>
+                      <div class="col-6 col-md-4">
+                        <button class="btn btn-outline-primary w-100 js-choose-monthly" data-amount="25" aria-pressed="false">CA$25</button>
+                      </div>
+                      <div class="col-6 col-md-4">
+                        <button class="btn btn-outline-primary w-100 js-choose-monthly" data-amount="50" aria-pressed="false">CA$50</button>
+                      </div>
+                      <div class="col-6 col-md-4">
+                        <button class="btn btn-outline-primary w-100 js-choose-monthly" data-amount="100" aria-pressed="false">CA$100</button>
+                      </div>
+                    </div>
+                    <div class="mt-auto">
+                      <button class="btn btn-block btn-donate font-weight-semibold" id="monthlyDonate"><i class="fa-regular fa-heart"></i> Donate Monthly</button>
+                      <p class="mt-4 mb-0 text-center fs-6">All donations are in <strong>Canadian dollars</strong> (CAD)</p>
+                    </div>
+                  </div>
 
-  <h2>Credit/Debit Card</h2>
-  <p>
-    If you would like to help support the mission of the PostgreSQL Community Association (PGCA) donations can be made
-    via Stripe using any of a variety of cards and payment methods by clicking the button below:</p>
+                  <!-- One-time Donations -->
+                  <div class="tab-pane fade show active" id="onetime" role="tabpanel" aria-labelledby="onetime-tab">
+                    <div class="row g-2 mb-0 small-gutters">
+                      <div class="col-6 col-md-4">
+                        <button class="btn btn-outline-secondary w-100 js-choose-onetime" data-amount="10" aria-pressed="false">CA$10</button>
+                      </div>
+                      <div class="col-6 col-md-4">
+                        <button class="btn btn-outline-secondary w-100 js-choose-onetime" data-amount="25" aria-pressed="false">CA$25</button>
+                      </div>
+                      <div class="col-6 col-md-4">
+                        <button class="btn btn-outline-secondary w-100 js-choose-onetime" data-amount="50" aria-pressed="false">CA$50</button>
+                      </div>
+                      <div class="col-6 col-md-4">
+                        <button class="btn btn-outline-secondary w-100 js-choose-onetime" data-amount="100" aria-pressed="false">CA$100</button>
+                      </div>
+                      <div class="col-6 col-md-4">
+                        <button class="btn btn-outline-secondary w-100 js-choose-onetime" data-amount="250" aria-pressed="false">CA$250</button>
+                      </div>
+                      <div class="col-6 col-md-4">
+                        <button class="btn btn-outline-secondary w-100 js-choose-onetime" data-amount="500" aria-pressed="false">CA$500</button>
+                      </div>
+                    </div>
+                    <div class="row g-2 align-items-end small-gutters">
+                      <div class="col-12 mb-0">
+                        <p class="form-label h5 font-weight-normal mt-n1 mb-3">Don’t worry, you can change the amount on checkout</p>
+                        <button class="btn btn-donate btn-block w-100 font-weight-semibold" id="customDonate"><i class="fa-regular fa-heart"></i> Donate, just once</button>
+                      </div>
+                      <div class="col-12 mb-0"><p class="mb-0 text-center fs-6" style="margin-top:1.15rem">All donations are in <strong>Canadian dollars</strong> (CAD)</p></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <script async
-          src="https://js.stripe.com/v3/buy-button.js">
-  </script>
+          <!-- Other Means Card: 1/3 width -->
+          <div class="col-12 col-lg-4">
+            <div class="card shadow-sm mb-4 h-100">
+              <div class="card-body d-flex flex-column">
+                <h3 class="mb-4 text-center text-primary">Donate via other&nbsp;means</h3>
+                <p class="mb-4 mt-auto text-center"><strong>For corporate sponsors:</strong><br/>
+                If you would like to donate via bank transfer, or with a Purchase Order (PO), or in any other way, please email the PGCA board—and we will be happy to help.</p>
+                <div class="mt-auto text-center">
+                  <a href="mailto:board@postgres.ca" class="mb-4 px-4 btn btn-brand font-weight-semibold">Email PGCA Board</a>
+                  <p class="mb-0 fs-6">
+                    <a class="font-weight-normal" href="/static/pdf/PGCA-sponsorship-prospectus-Feb2026.pdf" target="_blank" rel="noopener">See Sponsorship prospectus</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script src="/static/js/donate.js"></script>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="gratitude" class="banner-bg">
+  <div class="container py-4 py-md-5">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="float-left text-primary icon mr-3">
+          <svg alt="clap icon">
+            <title>clap icon</title>
+            <use xlink:href="/static/img/icon-sprite.svg#clap-icon"></use>
+          </svg>
+        </div>
+        <h2 class="mt-0">Thank you for supporting the PostgreSQL project!</h2>
+        <p class="text-emphasis">With gratitude, the PGCA board and the PostgreSQL Core Team</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="donation-stats">
+  <div class="container py-4 py-md-5">
+    <div class="row">
+      <div class="col-md-5 col-lg-4 mb-5"><span class="fs-1 pl-4 py-0 d-block mb-3">CA$100,068</span><span class="d-block pl-4">ANNUAL DONATIONS*</span></div>
+      <div class="col-md-3 col-lg-4 mb-5"><span class="fs-1 pl-4 py-0 d-block mb-3">32</span><span class="d-block pl-4">INDIVIDUALS*</span></div>
+      <div class="col-md-4 col-lg-4 mb-5"><span class="fs-1 pl-4 py-0 d-block mb-3">4</span><span class="d-block pl-4">CORPORATIONS*</span></div>
+      <div class="col-12"><small class="d-block pl-4">*Last updated on Jan 31, 2026. | Rolling 12 month totals.</small></div>
+    </div>
+  </div>
+</div>
+<div id="sponsorship-levels">
+  <div class="container py-4 py-md-5">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-primary mb-4">Corporate Sponsorship levels for 2026 (in USD)</h2>
+        <p>The PostgreSQL Community Association (PGCA) carries out its mission with the generous support of our donors and sponsors.</p>
+        <p>(Amounts in USD. Sponsorship amounts last updated on February 1, 2026.)</p>
+        <table class="table table-striped w-100 mb-5">
+          <thead>
+            <tr>
+              <th scope="col" class="text-primary">Level</th>
+              <th scope="col" class="text-primary">Annual Donation (in USD)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Donor</th>
+              <td><$2,500</td>
+            </tr>
+            <tr>
+              <th scope="row">Friend</th>
+              <td>$2,500</td>
+            </tr>
+            <tr>
+              <th scope="row">Supporter</th>
+              <td>$5,000</td>
+            </tr>
+            <tr>
+              <th scope="row">Patron</th>
+              <td>$20,000</td>
+            </tr>
+            <tr>
+              <th scope="row">Benefactor</th>
+              <td>$40,000</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="alert alert-secondary py-md-3 px-md-4 py-lg-4 px-lg-5" role="alert">
+          <p class="text-primary mb-2"><strong>NOTE:</strong></p>
+          <p class="mb-0 text-emphasis">Contributions to the PostgreSQL Community Association are generally not deductible as a charitable donation for tax purposes, as PGCA is registered as a non-profit organization and not a charity. Please check with your local tax authorities if you are unsure.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="funding" style="background-color:var(--card-bg-color);">
+  <div class="container py-4 py-md-5">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-primary mb-4">Where will your sponsorship dollars go?</h2>
+        <p class="mb-5">Donating to PGCA strengthens the business of Postgres and is needed because the funding for the volunteer-run PGCA non-profit comes from donations from corporations & individuals (like you!)</p>
+        <h3 class="h2 mb-4 text-emphasis">Your funding supports:</h3>
+        <ul class="mb-4 pl-4">
+          <li class="pl-2 mb-2"><strong>Ability to defend</strong> against inappropriate use of brand assets & trademarks</li>
+          <li class="pl-2 mb-2"><strong>Ability to provide</strong> no-cost licenses to organizations who wish to use PostgreSQL brand assets outside of fair use</li>
+          <li class="pl-2 mb-2"><strong>Ability to maintain</strong> domains required by the project, e.g. postgresql.org</li>
+          <li class="pl-2 mb-2"><strong>Expansion of jurisdiction</strong> of trademark protection (Madrid Protocol)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="recognition">
+  <div class="container py-4 py-md-5">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-primary mb-4">How PGCA recognizes your donations?</h2>
+        <p>For all donations at the “Friend” level & above—for the 12 months following your donation to PGCA</p>
+        <ol class="pl-4">
+          <li class="pl-2 mb-2">Prominent listing of your name or logo on the PostgreSQL website at <a href="https://www.postgresql.org/about/financial" target="_blank" rel="noopener">postgresql.org/about/financial</a></li>
+          <li class="pl-2 mb-2">You may state you are an official sponsor of the PostgreSQL project</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <stripe-buy-button
-    buy-button-id="buy_btn_1NYVWCH2jVzVOptSgHmtWRpe"
-    publishable-key="pk_live_51NYUFhH2jVzVOptSXaLQ9XGrka7IAxP9qjzyQfWSYPm9kaYKciajFO2EvqLQg4YjzKlWxLp9zJww2h3xoImG5a8L00jc1FjSG0"
-  >
-  </stripe-buy-button>
-
-  <h2>PayPal</h2>
-  <p>
-    If you would prefer to donate via PayPal, either using your PayPal account, or with a debit or credit
-    card. Please click the Donate button below to visit our PayPal donation page:
-
-  <form action="https://www.paypal.com/donate" method="post" target="_top">
-    <input type="hidden" name="hosted_button_id" value="P96NP3M3LWHZS"/>
-    <input type="image" src="https://pics.paypal.com/00/s/OGM0MGY1ZDItMzAyNi00YmMyLThlNTgtMGJlZTkxMTIzZDk0/file.PNG"
-           border="0" name="submit" title="PayPal - The safer, easier way to pay online!"
-           alt="Donate with PayPal button"/>
-    <img alt="" border="0" src="https://www.paypal.com/en_CA/i/scr/pixel.gif" width="1" height="1"/>
-  </form>
-
-  </p>
-
-  <h2>Bank Transfer</h2>
-  <p>
-    If you would like to donate via bank transfer, or in any other
-    way, please contact the PGCA board at
-    <a href="mailto:board@lists.postgres.ca">board@lists.postgres.ca</a> and we
-    will be happy to help.
-  </p>
-
-  <h2>Thank You</h2>
-  <p>
-    Thank you for supporting the PostgreSQL Project!
-  </p>
-
-
+{% include "partials/_thank_you.html" %}
 {% endblock %}

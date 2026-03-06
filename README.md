@@ -12,10 +12,27 @@ A static website can be generated from these templates with the following steps:
     pip install Markdown==2.6.5 python-dateutil jinja2
     ```
 
-4. Run the deploystatic.py script:
+4. Run the deploystatic.py script from the pgeu-system repo:
+
+    from pgeu-system:
+
+    from pgeu-website:
 
     ```shell script
-    python pgeu-website/tools/deploystatic/deploystatic.py `pwd`/pgcac-website `pwd`/postgres.ca
+    mkdir postgres.ca
+    python ../pgeu-system/tools/deploystatic/deploystatic.py `pwd`/ `pwd`/postgres.ca
+    ```
+
+    from local pgcac-website:
+
+    ```shell script
+    python tools/deploystatic.py `pwd`/pgcac-website `pwd`/postgres.ca
+    ```
+
+    from virtual environment:
+
+    ```shell script
+    ./pythonenv/bin/python3.12 tools/deploystatic.py `pwd`/ `pwd`/postgres.ca
     ```
 
 5. Test the resulting build:

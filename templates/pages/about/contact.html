@@ -1,16 +1,62 @@
-{%extends "base.html" %}
-{%block title%}Contact{%endblock%}
-{%block maincontent%}
+{%extends "base-fullwidth.html" %}
+{%block title%}Contact - PostgreSQL Community Association (PGCA) non-profit{%endblock%}
+{% block meta_description %}How to contact the board for the PGCA non-profit that protects the PostgreSQL project’s trademarks and brand assets.{% endblock %}
+{% block og_slug %}pgca-contact{% endblock %}
 
-<h1>Contact</h1>
-<p>
-    The PostgreSQL Community Association is a Canadian Not For Profit
-    corporation that holds assets for the PostgreSQL project such as domain
-    names and trademarks.
-</p>
+{% block preload %}
+  <link rel="preload" as="image" href="/static/img/contact-elephants.webp" type="image/webp">
+  <link rel="preload" as="image" href="/static/img/contact-elephants.png" type="image/png">
+{% endblock %}
 
-<p>
-  You can contact the board of the PostgreSQL Community Association at
-  <a href="mailto:board@lists.postgres.ca">board@lists.postgres.ca</a>.
-</p>
+{% block notification %}
+  {% include "partials/_default_notification.html" %}
+{% endblock %}
+
+{% block maincontent %}
+<div class="jumbotron jumbotron-fluid mb-0 py-5 banner-bg" id="contact-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="mt-0 mb-2">Contact the PGCA Board</h1>
+        <p class="lead my-0 text-emphasis">PostgreSQL Community Association (PGCA)</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="contact-intro" class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-10">
+      <p class="mb-0">The PostgreSQL Community Association is a Canadian Not For Profit corporation that holds assets for the PostgreSQL project such as domain names and trademarks.</p>
+    </div>
+  </div>
+</div>
+<div id="contact-info" class="py-5 bg-secondary-soft">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-5 mb-4 mb-md-0">
+        <h2 class="h3 mb-4 text-primary">Email is preferred</h2>
+        <p>You can contact the board of the PostgreSQL Community Association&nbsp;at<br/>
+          <a class="btn btn-brand mt-4 font-weight-bold" href="mailto:board@postgres.ca">
+            <i class="icon icon-lg mr-1">
+              <svg alt="envelope icon">
+                <title>envelope icon</title>
+                <use xlink:href="/static/img/icon-sprite.svg#envelope-icon"></use>
+              </svg>
+            </i>
+            board@postgres.ca</a>
+        </p>
+      </div>
+      <div class="col-12 col-md-6 offset-md-1" id="mailing-address">
+        <h2 class="h3 mb-4 text-primary">Mailing Address</h2>
+        <p>PostgreSQL Community Association of Canada (PGCA)<br/>
+           2967 Dundas St. W. #1014<br/>
+           Toronto, ON M6P 1Z2<br/>
+           Canada
+        </p>
+        <p style="max-width:36ch"><small><strong>Important.</strong> Physical mailing address should ONLY be used for legal reasons. For anything else, please use email.</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+{% include "partials/_community_support.html" %}
 {%endblock%}

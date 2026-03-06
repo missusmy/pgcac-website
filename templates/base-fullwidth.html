@@ -1,0 +1,125 @@
+{% set base_url = "https://www.postgres.ca/" %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#336791">
+
+  <!-- CSS -->
+  <link href="https://assets.postgresql.org/bootstrap/4/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link href="https://assets.postgresql.org/font-awesome/fontawesome-free-6/css/all.min.css" rel="stylesheet"
+    crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/static/css/pgcac.css">
+
+  <title>{%block title%}{%endblock%}</title>
+
+  {%- set _meta_desc -%}{% block meta_description %}PGCA is a non-profit chartered by the PostgreSQL Core Team to protect the Postgres trademarks & brand assets. Learn more about how to donate, sponsors, sponsorship levels, and the latest PGCA news.{% endblock %}{%- endset -%}
+  {%- if _meta_desc|trim -%}
+    <meta name="description" content="{{ _meta_desc|striptags|trim }}">
+  {%- endif -%}
+    {%- set _og_slug -%}{% block og_slug %}pgca-home{% endblock %}{%- endset -%}
+    <meta property="og:image" content="{{ base_url }}/static/img/og/{{ _og_slug|striptags|trim }}.png">
+
+  <link rel="icon" type="image/png" href="/static/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg" />
+  <link rel="shortcut icon" href="/static/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="PGCA" />
+  <link rel="manifest" href="/static/site.webmanifest" />
+
+  {%- set _preload -%}{% block preload %}{% endblock %}{%- endset -%}
+  {%- if _preload|trim -%}{{ _preload|safe }}{%- endif -%}
+
+  <script>
+    let theme = 'light';
+    if (localStorage.getItem('theme')) {
+      if (localStorage.getItem('theme') === 'dark') {
+        theme = 'dark';
+      }
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      theme = 'dark';
+    }
+  </script>
+</head>
+
+<body class="fullwidth">
+  <div class="container-fluid">
+
+    <!-- Nav -->
+    <div class="row justify-content-md-center">
+      <div class="col">
+        <nav class="navbar small-shadow fixed-top navbar-expand-md navbar-light bg-light" id="mainNav">
+          <a class="navbar-brand p-0" href="/" title="Home">
+            <img class="logo" src="/static/img/elephant.png" alt="PostgreSQL Elephant Logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#pgNavbar"
+            aria-controls="pgNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="pgNavbar">
+            <ul class="navbar-nav ml-auto mr-2">
+              <li class="nav-item p-2"><a href="/about/pgca" title="About">About</a></li>
+              <li class="nav-item p-2"><a href="/sponsors" title="Sponsors">Sponsors</a></li>
+              <li class="nav-item p-2"><a href="/faq" title="FAQ">FAQ</a></li>
+              <li class="nav-item p-2"><a href="/news" title="News">News</a></li>
+              <li class="nav-item p-2"><a href="/trademarks/list" title="Trademarks">Trademarks</a></li>
+              <li class="nav-item p-2"><a href="/domains/list" title="Domains">Domains</a></li>
+            </ul>
+            <form id="form-theme" class="form-inline" style="display: none;">
+              <button id="btn-theme" class="btn btn-default ml-1" type="button" onclick="theme_switch()"
+                title="Toggle light/dark mode"></button>
+              <a href="/donate" class="btn btn-donate font-weight-bold ml-1 px-4"
+                title="Donate to PostgreSQL Community Association"><i class="fa-regular fa-heart"></i> Donate</a>
+            </form>
+          </div>
+        </nav>
+      </div> <!-- col -->
+    </div> <!-- row -->
+    <!-- End Nav -->
+  </div>
+
+  <!-- Content -->
+  <main>
+    <!-- Notification -->
+    {% set notif %}{% block notification %}{% endblock %}{% endset %}
+    {% if notif|trim %}
+      <div class="alert alert-info text-center mb-0" role="alert" id="top-alert">
+        {{ notif|safe }}
+      </div>
+    {% endif %}
+    <!-- End Notification -->
+    <!-- Main Content -->
+    {% block maincontent %}{% endblock %}
+    <!-- End Main Content -->
+  </main>
+  <!-- End Content -->
+
+  <!-- Footer -->
+  <footer id="footer" style="background-color:var(--card-bg-color);" class="py-5">
+    <div class="container">
+      <a class="navbar-brand p-0 mb-1" href="/" title="Home">
+        <img class="logo" src="/static/img/slonik.png" alt="PostgreSQL Elephant Logo" width="60" height="62" />
+      </a>
+      <br/>
+      <a href="/downloads">Downloads</a> | <a href="/about/privacypolicy/">Privacy policy</a> | <a href="/about/pgca">About</a> | <a href="/about/contact/">Contact</a>
+      <br />
+      <p class="mt-3 mb-2">
+        <a href="mailto:board@postgres.ca" class="inline-block" aria-label="Email us"><i class="fas fa-lg fa-envelope"></i></a><!--<a href="#" class="ml-3 inline-block" aria-label="Follow us on LinkedIn"><i class="fas fa-lg fa-brands fa-linkedin"></i></a>-->
+      </p>
+      <p class="font-weight-semibold mb-1">Copyright © 2008-2026 PostgreSQL Community Association</p>
+      <p class="text-muted mb-0 ml-auto mr-auto" style="max-width:80ch"><small>Postgres, PostgreSQL and the Slonik Logo are trademarks or registered trademarks of the PostgreSQL Community Association of Canada, and used with their permission.</small></p>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <!-- jQuery/Bootstrap -->
+  <script src="https://assets.postgresql.org/jquery/3/jquery-3.6.1.slim.min.js" crossorigin="anonymous"></script>
+  <script src="https://assets.postgresql.org/bootstrap/4/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+  <script src="/static/js/pgcac.js"></script>
+</body>
+
+</html>
